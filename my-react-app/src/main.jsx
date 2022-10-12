@@ -4,7 +4,8 @@ import ReactDOM from 'react-dom/client'
 // import App from './App'
 // import App from './TwoWayBindDing'
 // import App from './TodoList';
-import App from './UseEffect';
+// import App from './UseEffect';
+import App from './useEffectWithDom';
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
