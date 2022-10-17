@@ -8,7 +8,8 @@ import ReactDOM from 'react-dom/client'
 // import App from './useEffectWithDom';
 // import App from './UseEffectWithTImer';
 // import App from './UseEffectWithAvatar';
-import App from './UseMemo'
+// import App from './UseMemo';
+import App from './UseReducer';
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(

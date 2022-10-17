@@ -16,6 +16,7 @@ export default function App() {
       }, 0);
   
       return result;
+
     }, [products]);
   
   
@@ -27,12 +28,14 @@ export default function App() {
           price: +price,
         }
       ]);
-  
+
       setName("");
       setPrice("");
       nameRef.current.focus();
     }
     
+    window.localStorage.setItem('product', JSON.stringify(products));
+
     return (
       <div className='avatar'>
         <input 
