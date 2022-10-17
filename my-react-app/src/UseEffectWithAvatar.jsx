@@ -10,7 +10,7 @@ function App(){
     }
     useEffect(() => {
       return () => {
-       URL.revokeObjectURL(avatar?.preview)
+       avatar && URL.revokeObjectURL(avatar.preview)
       }
     }, [avatar])
     
