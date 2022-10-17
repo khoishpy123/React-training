@@ -1,6 +1,7 @@
 import { useReducer, useRef } from "react"
 import './App.css'
 
+ //1. innitState
 const innitState = {
     job: '',
     jobs: []
@@ -10,6 +11,7 @@ const innitState = {
   const ADD_JOB = 'add_job'
   const DEL_JOB = 'del_job'
   
+  //2. Action
   const setJob = payload => {
       return {
         type: SET_JOB,
@@ -33,6 +35,7 @@ const innitState = {
     }
   }
   
+  //3. Reducer
   const reducer = (state, action) => {
     console.log('Action: ', action)
     console.log('Prev State: ', state)
@@ -71,6 +74,7 @@ const innitState = {
       return newState
   }
   
+  //4. Dispatch
   function App () {
   
     const [state, Dispatch] = useReducer(reducer, innitState)
@@ -102,7 +106,7 @@ const innitState = {
              {jobs.map((job, index) => (
                 <li key={index}>{job} 
                 <span onClick={ () => {
-                  Dispatch(delJob(index.job))
+                  Dispatch(delJob(index))
                 }}>&times;</span>
                 </li>
              ))}
