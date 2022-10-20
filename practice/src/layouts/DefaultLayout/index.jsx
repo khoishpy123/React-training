@@ -1,5 +1,6 @@
 import Header from './Header/header';
 import Sidebar from './Sidebar/sidebar';
+import './DefaultLayout.scss';
 
 function DefaultLayout({ children }) {
   return (
