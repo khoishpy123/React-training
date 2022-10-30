@@ -1,9 +1,9 @@
-import DashBoard from '../layouts/page/DashBoard';
-import Student from '../layouts/page/Student';
-
+import DashBoard from '../layouts/page/DashBoard/DashBoard';
+import Student from '../layouts/page/Student/Student';
+import routesConfig from '../config/routes';
 const routes = [
-  { path: '/', component: DashBoard },
-  { path: '/student', component: Student },
+  { path: routesConfig.dashboard, component: DashBoard },
+  { path: routesConfig.student, component: Student },
 ];
 
 export { routes };
