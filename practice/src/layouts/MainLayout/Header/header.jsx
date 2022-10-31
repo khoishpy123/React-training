@@ -13,7 +13,7 @@ function Header() {
           <img src={HeaderLogo} className={styles.logo} alt="Header Logo" />
         </Link>
       </div>
-      <Search />
+      {/* <Search /> */}
       <div className={styles.header_account}></div>
     </header>
   );

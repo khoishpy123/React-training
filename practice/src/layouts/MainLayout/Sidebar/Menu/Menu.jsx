@@ -1,5 +1,5 @@
-function Menu({ Children }) {
-  return <nav>{Children}</nav>;
+function Menu({}) {
+  return <nav></nav>;
 }
 
 export default Menu;

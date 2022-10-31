@@ -1,3 +1,7 @@
+import { Icon } from '@iconify/react';
+
+import styles from './Table.module.scss';
+
 function Table({ allStudents }) {
   return (
     <table>
@@ -15,6 +19,11 @@ function Table({ allStudents }) {
             <td>{item.name}</td>
             <td>{item.company}</td>
             <td>{item.role}</td>
+            <td>
+              <button className={styles.action_btn}>
+                <Icon icon="clarity:ellipsis-vertical-line" />
+              </button>
+            </td>
           </tr>
         ))}
       </tbody>

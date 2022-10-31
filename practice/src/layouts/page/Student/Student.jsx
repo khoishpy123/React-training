@@ -7,9 +7,13 @@ import { setAllStudents } from '../../.././actions/student.actions';
 import { getAllStudent } from '../../.././helpers/services';
 
 //stores
-import { Context } from '../../.././store/Context';
+import { Context } from '../../../store/Context';
 
-import Table from '../../.././components/Table/Table';
+import Table from '../../../components/Table/Table';
+import Search from '../../../components/Search/Search';
+import Filter from '../../../components/Filter/Filter';
+
+import styles from './Student.module.scss';
 
 function Student() {
   const { state, dispatch } = useContext(Context);
@@ -28,9 +32,19 @@ function Student() {
   }, []);
 
   return (
-    <>
-      <Table allStudents={state.allStudents} />
-    </>
+    <div>
+      <div className={styles.student_container}>
+        <h2>User</h2>
+        <button className={styles.add_btn}> ADD</button>
+      </div>
+      <div className={styles.table_wrapper}>
+        <div className={styles.tool_bar}>
+          <Search />
+          <Filter />
+        </div>
+        <Table allStudents={state.allStudents} />
+      </div>
+    </div>
   );
 }
 export default Student;

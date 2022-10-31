@@ -7,8 +7,7 @@ import config from '../../.././config/index';
 function Sidebar() {
   return (
     <aside className={styles.wrapper}>
-      {/* <nav className={styles.nav_sidebar}> */}
-      <nav>
+      <nav className={styles.nav_sidebar}>
         <MenuItem
           title="Dashboard"
           to={config.routes.dashboard}
@@ -20,7 +19,6 @@ function Sidebar() {
           icon={<Icon icon="bxs:user-rectangle" />}
         />
       </nav>
-      {/* </nav> */}
     </aside>
   );
 }

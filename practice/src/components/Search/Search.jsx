@@ -30,7 +30,7 @@ function Search() {
         <input
           ref={inputRef}
           value={searchValue}
-          placeholder="Search ................."
+          placeholder="Search student..."
           spellCheck={false}
           onChange={(e) => setSearchValue(e.target.value)}
         />
