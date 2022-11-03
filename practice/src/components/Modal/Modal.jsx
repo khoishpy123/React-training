@@ -1,21 +1,9 @@
-import { useState, useContext, useRef } from 'react';
-
-//data
-import { addStudent } from '../../actions/student.actions';
-
-//helpers
-import { postNewUser } from '../../helpers/services';
-
-//stores
-import { Context } from '../../store/Context';
-
-import getStudentList from '../.././layouts/page/Student/Student';
+import { useState, useRef } from 'react';
 
 //styles
 import styles from './Modal.module.scss';
 
 function Modal({ setIsOpen, onAdd }) {
-  const { dispatch } = useContext(Context);
   const [name, setName] = useState('');
   const [company, setCompany] = useState('');
   const [role, setRole] = useState('');

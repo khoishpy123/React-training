@@ -7,7 +7,7 @@ import { addStudent } from '../../../actions/student.actions';
 import { setAllStudents } from '../../.././actions/student.actions';
 
 //helpers
-import { getAllStudent, postNewUser } from '../../.././helpers/services';
+import { getAllStudent, postNewUser } from '../../../helpers/user.services';
 
 //stores
 import { Context } from '../../../store/Context';
@@ -40,6 +40,8 @@ function Student() {
       dispatch(addStudent(data));
     }
   };
+
+  const getUserId = async (item) => {};
 
   useEffect(() => {
     getStudentList();
