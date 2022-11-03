@@ -12,7 +12,7 @@ export default function reducer(state, action) {
       };
     case ADD_ITEM:
       return {
-        allStudents: [...state.allStudents, action.newItem],
+        allStudents: [...state.allStudents, action.newStudent],
       };
     case EDIT_ITEM:
       return {

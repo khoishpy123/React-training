@@ -2,7 +2,7 @@ import { Icon } from '@iconify/react';
 
 import styles from './Table.module.scss';
 
-function Table({ allStudents }) {
+export const Table = ({ allStudents }) => {
   return (
     <table>
       <thead>
@@ -14,7 +14,7 @@ function Table({ allStudents }) {
         </tr>
       </thead>
       <tbody>
-        {allStudents.map((item) => (
+        {allStudents?.map((item) => (
           <tr key={item.id}>
             <td>{item.name}</td>
             <td>{item.company}</td>
@@ -29,6 +29,6 @@ function Table({ allStudents }) {
       </tbody>
     </table>
   );
-}
+};
 
 export default Table;
