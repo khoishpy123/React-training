@@ -1,7 +1,7 @@
 import { Icon } from '@iconify/react';
 
 import styles from './Sidebar.module.scss';
-import Menu, { MenuItem } from './Menu/index';
+import MenuItem from './SideBarItem/SideBarItem';
 import config from '../../.././config/index';
 
 function Sidebar() {

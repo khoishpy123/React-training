@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import styles from './Menu.module.scss';
+import styles from './SideBarItem.module.scss';
 
 function MenuItem({ title, to, icon }) {
   return (
