@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Icon } from '@iconify/react';
 
 import { Wrapper as PopperWrapper } from '../Popper/index';
-import DropDown from '../../components/DropDown/DropDown';
+import Ellipsis from '../../components/Button/Ellipsis/Ellipsis';
 
 import styles from './Table.module.scss';
 
@@ -24,7 +24,7 @@ export const Table = ({ allStudents }) => {
             <td>{item.company}</td>
             <td>{item.role}</td>
             <td>
-              <DropDown dropdownId={item.id} />
+              <Ellipsis dropdownId={item.id} />
             </td>
           </tr>
         ))}

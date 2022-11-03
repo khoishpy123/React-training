@@ -14,7 +14,7 @@ import { Context } from '../../../store/Context';
 
 import Table from '../../../components/Table/Table';
 import Search from '../../../components/Search/Search';
-import Filter from '../../../components/Filter/Filter';
+import Filter from '../../../components/Button/Filter/Filter';
 import Modal from '../../../components/Modal/Modal';
 
 import styles from './Student.module.scss';
