@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Icon } from '@iconify/react';
-import DropDownContent from '../DropDownContent/DropDownContent';
+import DropDownContent from '../DropDownItem/DropDownItem';
 
 import styles from '../Table/Table.module.scss';
 
