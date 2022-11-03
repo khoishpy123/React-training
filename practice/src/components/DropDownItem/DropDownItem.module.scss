@@ -1,0 +1,18 @@
+.wrapper {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgb(145 158 171 / 20%) 0px 5px 5px -3px, rgb(145 158 171 / 14%) 0px 8px 10px 1px,
+    rgb(145 158 171 / 12%) 0px 3px 14px 2px;
+  min-width: 16px;
+  min-height: 16px;
+  max-width: calc(100% - 32px);
+  max-height: calc(100% - 32px);
+  outline: 0px;
+  padding: 8px;
+  width: 140px;
+  z-index: 1;
+}
+
+li {
+  list-style: none;
+}

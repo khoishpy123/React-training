@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Icon } from '@iconify/react';
 import DropDownContent from '../DropDownItem/DropDownItem';
 
-import styles from '../Table/Table.module.scss';
+import styles from './DropDown.module.scss';
 
 function DropDown(dropdownId) {
   const [open, setOpen] = useState(false);
