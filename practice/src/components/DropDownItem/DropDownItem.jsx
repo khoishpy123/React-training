@@ -9,13 +9,13 @@ function DropDownContent(dropdownId, setOpen) {
   return (
     <>
       <div className={styles.wrapper}>
-        <li>
+        <li className={styles.dropDown_Item}>
           <span>
             <Icon icon="clarity:edit-solid" />
           </span>
           <span>Edit</span>
         </li>
-        <li>
+        <li className={styles.dropDown_Item}>
           <span>
             <Icon icon="fluent:delete-12-regular" />
           </span>
