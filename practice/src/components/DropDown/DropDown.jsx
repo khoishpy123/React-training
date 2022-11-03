@@ -1,12 +1,22 @@
-import styles from './DropDown.module.scss';
+import { useState } from 'react';
+import { Icon } from '@iconify/react';
+import DropDownContent from '../DropDownContent/DropDownContent';
 
-function DropDown() {
+import styles from '../Table/Table.module.scss';
+
+function DropDown(dropdownId) {
+  const [open, setOpen] = useState(false);
+
+  const toggle = () => {
+    setOpen(!open);
+  };
+
   return (
     <>
-      <div>
-        <li>Edit</li>
-        <li>Delete</li>
-      </div>
+      <button className={styles.action_btn} onClick={toggle}>
+        <Icon icon="clarity:ellipsis-vertical-line" />
+      </button>
+      {open && <DropDownContent setOpen={setOpen} dropdownId={dropdownId} />}
     </>
   );
 }
