@@ -1,12 +1,10 @@
-import { useState } from 'react';
-import { Icon } from '@iconify/react';
-
-import { Wrapper as PopperWrapper } from '../Popper/index';
+import React, { memo } from 'react';
 import Ellipsis from '../../components/Button/Ellipsis/Ellipsis';
 
-import styles from './Table.module.scss';
+import './Table.module.scss';
 
-export const Table = ({ allStudents }) => {
+export const Table = (props) => {
+  const { allStudents, onClickDelete } = props;
   return (
     <table>
       <thead>
@@ -19,12 +17,12 @@ export const Table = ({ allStudents }) => {
       </thead>
       <tbody>
         {allStudents?.map((item) => (
-          <tr key={item.id} id={item.id}>
+          <tr key={item.id} id={`user-${item.id}`}>
             <td>{item.name}</td>
             <td>{item.company}</td>
             <td>{item.role}</td>
             <td>
-              <Ellipsis dropdownId={item.id} />
+              <Ellipsis dropdownId={item.id} onClickE={onClickDelete} />
             </td>
           </tr>
         ))}
@@ -33,4 +31,4 @@ export const Table = ({ allStudents }) => {
   );
 };
 
-export default Table;
+export default memo(Table);

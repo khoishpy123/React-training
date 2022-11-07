@@ -1,96 +1,154 @@
-import { useState, useRef } from 'react';
+import { useState, useEffect } from 'react';
+
+// Import the Modal type
+import MODAL_TYPE from '../../constants/modalType';
+
+import ModalContent from '../ModalContent/ModalContent';
+
+//import Component
+import IconBtn from '../Button/IconButton/IconButton';
+import Title from '../Title/Title';
+import NormalButton from '../Button/NormalButton/NormalButton';
 
 //styles
 import styles from './Modal.module.scss';
+import { useContext } from 'react';
+import { Context } from '../../store/Context';
 
-function Modal({ setIsOpen, onAdd }) {
+function Modal(props) {
+  const { showModal, closeModal, onSubmit, type, defaultValue, userId } = props;
   const [name, setName] = useState('');
   const [company, setCompany] = useState('');
   const [role, setRole] = useState('');
   const [error, setError] = useState('');
 
-  const handleClickSubmitForm = async () => {
-    if (name && company && role) {
-      const newStudents = { name, company, role };
-      if (onAdd) {
-        onAdd(newStudents);
-      }
-      setIsOpen(false);
+  // The function to handle data in the input fields of the form
+  useEffect(() => {
+    // If the modal type is ADD, the input fields will be empty.
+    if (type === MODAL_TYPE.ADD) {
+      setName('');
+      setCompany('');
+      setRole('');
+    }
+    // If the modal type is EDIT, the input field will be replaced by the fetched data.
+    else {
+      setName(defaultValue.name);
+      setCompany(defaultValue.company);
+      setRole(defaultValue.role);
+    }
+    return () => {
+      setError('');
+    };
+  }, [showModal]);
+
+  console.log(defaultValue);
+
+  // The function to handle changing the name
+  const handleChangeName = (e) => {
+    setName(e.target.value);
+  };
+
+  // The function to handle changing the company
+  const handleChangeCompany = (e) => {
+    setCompany(e.target.value);
+  };
+
+  // The function to handle changing the role
+  const handleChangeRole = (e) => {
+    setRole(e.target.value);
+  };
+
+  // The function to handle ADD or EDIt the products
+  const handleAddOrEdit = () => {
+    const data = {
+      ...(type === MODAL_TYPE.EDIT && {
+        id: defaultValue.id,
+      }),
+      name,
+      company,
+      role,
+    };
+    const isValid = name && company && role;
+    if (!isValid) {
+      setError('Please enter full information !!');
+      return;
+    }
+    const success = onSubmit(data);
+    if (!success) {
+      setError(`${type === MODAL_TYPE.EDIT ? 'Edit' : 'Add'} the User failed!`);
     } else {
-      setError('Please check and enter the full information !!');
+      closeModal();
     }
   };
 
-  return (
+  // The function to handle Delete the product
+  const handleDeleteUser = () => {
+    const success = onSubmit({ id: defaultValue.id });
+    if (!success) {
+      setError('Delete the product failed!');
+    } else {
+      closeModal();
+    }
+  };
+
+  const handleClickSubmitForm = () => {
+    switch (type) {
+      case MODAL_TYPE.ADD:
+      case MODAL_TYPE.EDIT:
+        handleAddOrEdit();
+        break;
+      case MODAL_TYPE.DELETE:
+        handleDeleteUser();
+        break;
+      default:
+    }
+  };
+
+  return showModal ? (
     <>
-      <div className={styles.darkBG} onClick={() => setIsOpen(false)} />
+      <div className={styles.darkBG} />
       <div className={styles.modal_wrapper}>
-        <form action="" className={styles.modal_container} autoComplete="off" method="get">
-          <button type="button" className={styles.closeBtn} onClick={() => setIsOpen(false)}>
-            &times;
-          </button>
-          <h1 id="form-title">Add User</h1>
-          <input
-            type="name"
-            name="name"
-            placeholder="Enter Name"
-            value={name}
-            className={styles.input_form}
-            onChange={(event) => setName(event.target.value)}
-          />
-          <br />
-          <input
-            type="text"
-            name="company"
-            placeholder="Enter Company"
-            className={styles.input_form}
-            value={company}
-            onChange={(event) => setCompany(event.target.value)}
-          />
-          <br />
-          <input
-            type="text"
-            name="role"
-            placeholder="Enter Role"
-            className={styles.input_form}
-            value={role}
-            onChange={(event) => setRole(event.target.value)}
-          />
-          <br />
-          <input type="hidden" id="employee-id" />
-          <button
-            type="button"
-            name="submit"
-            className={styles.deleteBtn}
+        <IconBtn
+          icon={'ant-design:close-outlined'}
+          onClick={closeModal}
+          className={styles.closeBtn}
+        />
+        <Title
+          title={
+            type === MODAL_TYPE.EDIT
+              ? 'Edit the user'
+              : type === MODAL_TYPE.ADD
+              ? 'Add new user'
+              : 'Delete the user'
+          }
+        />
+        {type === MODAL_TYPE.DELETE ? (
+          <div>
+            <h2>Are you sure ?</h2>
+            <p>
+              Do you really want to delete this product ? This process cannot be
+              undone.
+            </p>
+          </div>
+        ) : (
+          <ModalContent
+            NameValue={name}
+            onNameChange={handleChangeName}
+            CompanyValue={company}
+            onCompanyChange={handleChangeCompany}
+            RoleValue={role}
+            onRoleChange={handleChangeRole}
             onClick={handleClickSubmitForm}
-          >
-            Insert Record
-          </button>
-        </form>
+          />
+        )}
+        <NormalButton
+          text="Submit"
+          className={styles.submitBtn}
+          onClick={handleClickSubmitForm}
+        />
       </div>
-      {/* <div className={styles.centered}>
-        <div className={styles.modal}>
-          <div className={styles.modalHeader}>
-            <h5 className={styles.heading}>Dialog</h5>
-          </div>
-          <button className={styles.closeBtn} onClick={() => setIsOpen(false)}>
-            &times;
-          </button>
-          <div className={styles.modalContent}>Are you sure you want to delete the item?</div>
-          <div className={styles.modalActions}>
-            <div className={styles.actionsContainer}>
-              <button className={styles.deleteBtn} onClick={() => setIsOpen(false)}>
-                Delete
-              </button>
-              <button className={styles.cancelBtn} onClick={() => setIsOpen(false)}>
-                Cancel
-              </button>
-            </div>
-          </div>
-        </div>
-      </div> */}
     </>
-  );
+  ) : null;
 }
 
 export default Modal;

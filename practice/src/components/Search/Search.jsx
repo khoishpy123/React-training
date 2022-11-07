@@ -21,7 +21,11 @@ function Search() {
       interactive
       visible={searchResult.length > 0}
       render={(attrs) => (
-        <div className={styles.search_result} tabIndex="-1" {...attrs}>
+        <div
+          className={styles.search_result}
+          tabIndex="-1"
+          {...attrs}
+        >
           <PopperWrapper>Ket quả</PopperWrapper>
         </div>
       )}

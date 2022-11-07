@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 40px;
+  align-items: center;
 }
 
 .add_btn {
@@ -15,6 +16,12 @@
   color: rgb(255, 255, 255);
   background-color: rgb(32, 101, 209);
   cursor: pointer;
+  box-shadow: rgb(32 101 209 / 24%) 0px 8px 16px 0px;
+
+  &:hover {
+    box-shadow: none;
+    background-color: rgb(16, 57, 150);
+  }
 }
 
 .tool_bar {

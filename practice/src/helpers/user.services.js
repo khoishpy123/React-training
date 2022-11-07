@@ -7,9 +7,18 @@ export const getAllStudent = async () => {
     const res = await axios.get(`${BASE_URL}/${API}`);
     return res.data;
   } catch (error) {
-    res.status, res.statusText;
+    window.alert(`An error has occurred: ${error}`);
   }
-  console.log(res);
+};
+
+// Get single data by GET method
+export const getProductApi = async (id) => {
+  try {
+    const res = await axios.get(`${BASE_URL}/${API}/${id}`);
+    return res.data;
+  } catch (error) {
+    window.alert(`An error has occurred: ${error}`);
+  }
 };
 
 // Post data by POST method
@@ -18,7 +27,7 @@ export const postNewUser = async (data) => {
     const res = await axios.post(`${BASE_URL}/${API}`, data);
     return res.data;
   } catch (error) {
-    res.status, res.statusText;
+    window.alert(`An error has occurred: ${error}`);
   }
 };
 
@@ -38,7 +47,9 @@ export const deleteUser = async (id) => {
   try {
     const res = await axios.delete(`${BASE_URL}/${API}/${id}`);
     return res.data;
+
+    console.log(res.data);
   } catch (error) {
-    res.status, res.statusText;
+    window.alert(`An error has occurred: ${error}`);
   }
 };

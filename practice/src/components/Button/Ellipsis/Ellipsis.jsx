@@ -1,24 +1,34 @@
 import { useState } from 'react';
 import { Icon } from '@iconify/react';
-import DropDownContent from '../../DropDownItem/DropDownItem';
+import DropDownItem from '../../DropDownItem/DropDownItem';
 
 import styles from './Ellipsis.module.scss';
 
-function DropDown(dropdownId) {
-  const [open, setOpen] = useState(false);
+function Ellipsis({ dropdownId, onClickE }) {
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => {
-    setOpen(!open);
+    setIsOpen(!isOpen);
   };
 
   return (
     <>
-      <button className={styles.action_btn} onClick={toggle}>
-        <Icon icon="clarity:ellipsis-vertical-line" />
-      </button>
-      {open && <DropDownContent setOpen={setOpen} dropdownId={dropdownId} />}
+      <div></div>
+      <div>
+        <button className={styles.action_btn} onClick={toggle}>
+          <Icon icon="clarity:ellipsis-vertical-line" />
+        </button>
+        {isOpen && (
+          <DropDownItem
+            id={dropdownId}
+            onClickDelete={onClickE}
+            isOpen={isOpen}
+            setIsOpen={setIsOpen}
+          />
+        )}
+      </div>
     </>
   );
 }
 
-export default DropDown;
+export default Ellipsis;

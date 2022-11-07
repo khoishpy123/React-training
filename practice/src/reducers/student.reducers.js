@@ -1,4 +1,9 @@
-import { SET_ALL_STUDENTS, ADD_ITEM, DELETE_ITEM, EDIT_ITEM } from '../constants/constants';
+import {
+  SET_ALL_STUDENTS,
+  ADD_ITEM,
+  DELETE_ITEM,
+  EDIT_ITEM,
+} from '../constants/constants';
 
 export const initialState = {
   allStudents: [], // All products
@@ -23,13 +28,13 @@ export default function reducer(state, action) {
         }),
       };
     case DELETE_ITEM:
-      const deleteProduct = state.allStudents.filter((item) => {
+      const deleteUser = state.allStudents.filter((item) => {
         if (item.id === action.id) return false;
         return true;
       });
       return {
         ...state,
-        allStudents: deleteStudent,
+        allStudents: deleteUser,
       };
     default:
       throw new Error('Invalid action');

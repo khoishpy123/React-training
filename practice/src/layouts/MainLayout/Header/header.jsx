@@ -10,7 +10,11 @@ function Header() {
     <header className={styles.header_content}>
       <div className={styles.header_logo}>
         <Link to={config.routes.dashboard}>
-          <img src={HeaderLogo} className={styles.logo} alt="Header Logo" />
+          <img
+            src={HeaderLogo}
+            className={styles.logo}
+            alt="Header Logo"
+          />
         </Link>
       </div>
       {/* <Search /> */}

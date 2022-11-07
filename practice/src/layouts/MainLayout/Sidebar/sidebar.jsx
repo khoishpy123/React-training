@@ -18,6 +18,11 @@ function Sidebar() {
           to={config.routes.student}
           icon={<Icon icon="bxs:user-rectangle" />}
         />
+        <MenuItem
+          title="Not Found"
+          to={config.routes.notfound}
+          icon={<Icon icon="fe:disabled" />}
+        />
       </nav>
     </aside>
   );

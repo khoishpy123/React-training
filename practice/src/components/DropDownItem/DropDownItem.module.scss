@@ -11,6 +11,9 @@
   padding: 8px;
   width: 140px;
   z-index: 1;
+  border-radius: 5px;
+  margin-left: -135px;
+  margin-top: -70px;
 }
 
 li {
@@ -37,4 +40,8 @@ li {
   &:hover {
     background-color: rgba(145, 158, 171, 0.08);
   }
+}
+
+.delete_title {
+  color: rgb(255, 72, 66);
 }
