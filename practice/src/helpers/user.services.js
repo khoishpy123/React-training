@@ -12,7 +12,7 @@ export const getAllStudent = async () => {
 };
 
 // Get single data by GET method
-export const getProductApi = async (id) => {
+export const getUserApi = async (id) => {
   try {
     const res = await axios.get(`${BASE_URL}/${API}/${id}`);
     return res.data;

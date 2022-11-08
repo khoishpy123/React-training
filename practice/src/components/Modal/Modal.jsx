@@ -1,26 +1,25 @@
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 // Import the Modal type
 import MODAL_TYPE from '../../constants/modalType';
 
-import ModalContent from '../ModalContent/ModalContent';
-
 //import Component
+import ModalContent from '../ModalContent/ModalContent';
 import IconBtn from '../Button/IconButton/IconButton';
 import Title from '../Title/Title';
 import NormalButton from '../Button/NormalButton/NormalButton';
 
 //styles
 import styles from './Modal.module.scss';
-import { useContext } from 'react';
-import { Context } from '../../store/Context';
 
 function Modal(props) {
-  const { showModal, closeModal, onSubmit, type, defaultValue, userId } = props;
-  const [name, setName] = useState('');
-  const [company, setCompany] = useState('');
+  const { showModal, closeModal, onSubmit, type, defaultValue } = props;
+
   const [role, setRole] = useState('');
+  const [name, setName] = useState('');
   const [error, setError] = useState('');
+  const [company, setCompany] = useState('');
 
   // The function to handle data in the input fields of the form
   useEffect(() => {
@@ -30,18 +29,18 @@ function Modal(props) {
       setCompany('');
       setRole('');
     }
-    // If the modal type is EDIT, the input field will be replaced by the fetched data.
+    //If the modal type is EDIT, the input field will be replaced by the fetched data.
     else {
-      setName(defaultValue.name);
-      setCompany(defaultValue.company);
-      setRole(defaultValue.role);
+      if (defaultValue.name && defaultValue.company && defaultValue.role) {
+        setName(defaultValue.name);
+        setCompany(defaultValue.company);
+        setRole(defaultValue.role);
+      }
     }
     return () => {
       setError('');
     };
   }, [showModal]);
-
-  console.log(defaultValue);
 
   // The function to handle changing the name
   const handleChangeName = (e) => {
@@ -132,11 +131,11 @@ function Modal(props) {
           </div>
         ) : (
           <ModalContent
-            NameValue={name}
+            nameValue={name}
             onNameChange={handleChangeName}
-            CompanyValue={company}
+            companyValue={company}
             onCompanyChange={handleChangeCompany}
-            RoleValue={role}
+            roleValue={role}
             onRoleChange={handleChangeRole}
             onClick={handleClickSubmitForm}
           />

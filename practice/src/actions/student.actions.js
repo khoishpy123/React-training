@@ -19,7 +19,6 @@ export const addStudent = (newStudent) => ({
 export const editStudent = (newStudent) => ({
   type: EDIT_ITEM,
   newStudent,
-  id,
 });
 
 export const deleteStudent = (id) => ({

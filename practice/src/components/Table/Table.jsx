@@ -4,30 +4,58 @@ import Ellipsis from '../../components/Button/Ellipsis/Ellipsis';
 import './Table.module.scss';
 
 export const Table = (props) => {
-  const { allStudents, onClickDelete } = props;
+  const {
+    allStudents,
+    onClickDelete,
+    onClickEdit,
+    type,
+    dataValue,
+    showModal,
+    searchName,
+  } = props;
+
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>company</th>
-          <th>role</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        {allStudents?.map((item) => (
-          <tr key={item.id} id={`user-${item.id}`}>
-            <td>{item.name}</td>
-            <td>{item.company}</td>
-            <td>{item.role}</td>
-            <td>
-              <Ellipsis dropdownId={item.id} onClickE={onClickDelete} />
-            </td>
+    <>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>company</th>
+            <th>role</th>
+            <th></th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {allStudents
+            ?.filter((item) => {
+              if (searchName == '') {
+                return item;
+              } else if (
+                item.name.toLowerCase().includes(searchName.toLowerCase())
+              ) {
+                return item;
+              }
+            })
+            .map((item) => (
+              <tr key={item.id}>
+                <td>{item.name}</td>
+                <td>{item.company}</td>
+                <td>{item.role}</td>
+                <td>
+                  <Ellipsis
+                    dropdownId={item.id}
+                    onClickE={onClickDelete}
+                    onClickEdit={onClickEdit}
+                    type={type}
+                    dataValue={dataValue}
+                    showModal={showModal}
+                  />
+                </td>
+              </tr>
+            ))}
+        </tbody>
+      </table>
+    </>
   );
 };
 

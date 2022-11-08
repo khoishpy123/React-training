@@ -4,7 +4,14 @@ import DropDownItem from '../../DropDownItem/DropDownItem';
 
 import styles from './Ellipsis.module.scss';
 
-function Ellipsis({ dropdownId, onClickE }) {
+function Ellipsis({
+  dropdownId,
+  onClickE,
+  onClickEdit,
+  type,
+  dataValue,
+  showModal,
+}) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => {
@@ -22,8 +29,12 @@ function Ellipsis({ dropdownId, onClickE }) {
           <DropDownItem
             id={dropdownId}
             onClickDelete={onClickE}
+            onClickEdit={onClickEdit}
             isOpen={isOpen}
             setIsOpen={setIsOpen}
+            type={type}
+            dataValue={dataValue}
+            showModal={showModal}
           />
         )}
       </div>

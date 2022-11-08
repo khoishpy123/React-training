@@ -1,23 +1,26 @@
-import React from 'react';
+import React, { memo, useState } from 'react';
 
 import { Icon } from '@iconify/react';
-
-import Modal from '../Modal/Modal';
 
 //styles
 import styles from './DropDownItem.module.scss';
 
 function DropDownItem(props) {
-  const { id, onClickDelete, isOpen, setIsOpen } = props;
+  const { id, onClickDelete, isOpen, setIsOpen, onClickEdit } = props;
 
   const handleClickDelete = () => {
     onClickDelete(id);
     setIsOpen(!isOpen);
   };
 
+  const handleClickEdit = () => {
+    onClickEdit(id);
+    setIsOpen(!isOpen);
+  };
+
   return (
     <div className={styles.wrapper}>
-      <li className={styles.dropDown_Item}>
+      <li className={styles.dropDown_Item} onClick={handleClickEdit}>
         <span>
           <Icon icon="clarity:edit-solid" />
         </span>
@@ -32,4 +35,4 @@ function DropDownItem(props) {
     </div>
   );
 }
-export default DropDownItem;
+export default memo(DropDownItem);
