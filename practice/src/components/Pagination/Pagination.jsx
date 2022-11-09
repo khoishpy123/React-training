@@ -9,7 +9,7 @@ const Pagination = ({ tablePerPage, totalTable, paginate }) => {
   }
 
   return (
-    <nav>
+    <nav className={styles.wrapper}>
       <ul className={styles.pagination}>
         {pageNumbers.map((number) => (
           <li

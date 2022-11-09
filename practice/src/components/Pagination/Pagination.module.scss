@@ -1,8 +1,14 @@
+.wrapper {
+  border: 1px solid rgb(249, 250, 251);
+  display: flex;
+  justify-content: center;
+}
+
 .pagination {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40px;
+  height: 50px;
 }
 
 .page_item {
@@ -11,10 +17,11 @@
   background-color: #ccc;
   cursor: pointer;
   border-radius: 6px;
-  border: 1px solid;
+  border: 1px solid #ccc;
   margin: 0 10px;
-}
 
-.page_link {
-  width: 40px;
+  &:hover {
+    box-shadow: none;
+    background-color: rgb(57 164 48);
+  }
 }

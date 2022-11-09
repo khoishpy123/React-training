@@ -1,12 +1,6 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Eloisa Cowdery",
-      "company": "Twimbo",
-      "role": "Subcontractor"
-    },
-    {
       "id": 2,
       "name": "Daphene Alleyn",
       "company": "Tavu",

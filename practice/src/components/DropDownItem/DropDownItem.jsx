@@ -1,11 +1,11 @@
-import React, { memo, useState } from 'react';
+import React from 'react';
 
 import { Icon } from '@iconify/react';
 
 //styles
 import styles from './DropDownItem.module.scss';
 
-function DropDownItem(props) {
+const DropDownItem = (props) => {
   const { id, onClickDelete, isOpen, setIsOpen, onClickEdit } = props;
 
   const handleClickDelete = () => {
@@ -34,5 +34,5 @@ function DropDownItem(props) {
       </li>
     </div>
   );
-}
-export default memo(DropDownItem);
+};
+export default DropDownItem;

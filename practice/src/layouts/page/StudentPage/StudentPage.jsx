@@ -29,12 +29,10 @@ import Table from '../../../components/Table/Table';
 import Search from '../../../components/Search/Search';
 import Filter from '../../../components/Button/Filter/Filter';
 import Modal from '../../../components/Modal/Modal';
-import Ellipsis from '../../../components/Button/Ellipsis/Ellipsis';
-import IconButton from '../../../components/Button/IconButton/IconButton';
-import DropDownItem from '../../../components/DropDownItem/DropDownItem';
 import Title from '../../../components/Title/Title';
 import Pagination from '../../../components/Pagination/Pagination';
 
+// import styles
 import styles from './Student.module.scss';
 
 function StudentPage() {
@@ -81,12 +79,14 @@ function StudentPage() {
     [idDelete],
   );
 
+  // handel when the user clicks delete
   const handleClickEdit = (id) => {
     getUser(id);
     setType(MODAL_TYPE.EDIT);
     setShowModal(true);
   };
 
+  // the function call API to add new users
   const handelAddUser = async (item) => {
     const data = await postNewUser(item);
     if (data) {
@@ -166,18 +166,12 @@ function StudentPage() {
           <Filter />
         </div>
         <Table
-          // allStudents={state.allStudents}
           onClickDelete={handleClickDelete}
           onClickEdit={handleClickEdit}
           dataValue={userData}
           showModal={showModal}
           searchName={searchName}
           allStudents={currentTable}
-        />
-        <Pagination
-          tablePerPage={tablePerPage}
-          totalTable={state.allStudents.length}
-          paginate={handelClickChangeTable}
         />
         <Modal
           onSubmit={
@@ -193,6 +187,11 @@ function StudentPage() {
           closeModal={handelCloseModal}
         />
       </div>
+      <Pagination
+        tablePerPage={tablePerPage}
+        totalTable={state.allStudents.length}
+        paginate={handelClickChangeTable}
+      />
     </div>
   );
 }

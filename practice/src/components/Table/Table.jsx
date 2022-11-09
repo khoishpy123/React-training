@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import Ellipsis from '../../components/Button/Ellipsis/Ellipsis';
 
 import './Table.module.scss';
@@ -59,4 +59,4 @@ export const Table = (props) => {
   );
 };
 
-export default memo(Table);
+export default Table;
