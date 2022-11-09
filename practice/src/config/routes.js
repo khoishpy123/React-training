@@ -1,6 +1,6 @@
 const routes = {
   dashboard: '/',
-  student: '/student',
+  user: '/user',
   notfound: '/404',
 };
 

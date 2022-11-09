@@ -5,7 +5,7 @@ import './Table.module.scss';
 
 export const Table = (props) => {
   const {
-    allStudents,
+    allUsers,
     onClickDelete,
     onClickEdit,
     type,
@@ -26,7 +26,7 @@ export const Table = (props) => {
           </tr>
         </thead>
         <tbody>
-          {allStudents
+          {allUsers
             ?.filter((item) => {
               if (searchName == '') {
                 return item;

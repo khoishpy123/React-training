@@ -5,16 +5,14 @@ import React, { useReducer } from 'react';
 import { Context } from './Context';
 
 //reducer
-import reducer, { initialState } from '../reducers/student.reducers';
+import reducer, { initialState } from '../reducers/user.reducers';
 
 //use Component Provider cover App
 //-> can use state and dispatch in App and components in App
 const Provider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   return (
-    <Context.Provider value={[state, dispatch]}>
-      {children}
-    </Context.Provider>
+    <Context.Provider value={[state, dispatch]}>{children}</Context.Provider>
   );
 };
 

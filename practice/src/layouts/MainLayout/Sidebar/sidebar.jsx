@@ -15,7 +15,7 @@ function Sidebar() {
         />
         <MenuItem
           title="Student"
-          to={config.routes.student}
+          to={config.routes.user}
           icon={<Icon icon="bxs:user-rectangle" />}
         />
         <MenuItem

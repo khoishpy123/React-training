@@ -2,19 +2,19 @@ import { useContext, useEffect, useState, useCallback, useRef } from 'react';
 
 //actions
 import {
-  addStudent,
-  deleteStudent,
-  setAllStudents,
-  editStudent,
-} from '../../../actions/student.actions';
+  addUser,
+  deleteUser,
+  setAllUsers,
+  editUser,
+} from '../../../actions/user.actions';
 
 //helpers
 import {
-  getAllStudent,
-  postNewUser,
-  deleteUser,
+  getAllUserAPI,
+  postNewUserAPI,
+  deleteUserAPI,
   getUserApi,
-  editUser,
+  editUserAPI,
 } from '../../../helpers/user.services';
 
 //stores
@@ -33,9 +33,9 @@ import Title from '../../../components/Title/Title';
 import Pagination from '../../../components/Pagination/Pagination';
 
 // import styles
-import styles from './Student.module.scss';
+import styles from './User.module.scss';
 
-function StudentPage() {
+function UserPage() {
   const [state, dispatch] = useContext(Context);
   const [showModal, setShowModal] = useState(false);
   const [type, setType] = useState();
@@ -47,16 +47,18 @@ function StudentPage() {
 
   const inputRef = useRef();
 
-  const getStudentList = async () => {
+  const getUserList = async () => {
     try {
-      const data = await getAllStudent();
+      const data = await getAllUserAPI();
       if (data) {
-        dispatch(setAllStudents(data));
+        dispatch(setAllUsers(data));
       }
     } catch (e) {
       setError(e.message);
     }
   };
+
+  console.log(state.allUsers);
 
   const getUser = async (id) => {
     const data = await getUserApi(id);
@@ -88,9 +90,9 @@ function StudentPage() {
 
   // the function call API to add new users
   const handelAddUser = async (item) => {
-    const data = await postNewUser(item);
+    const data = await postNewUserAPI(item);
     if (data) {
-      dispatch(addStudent(data));
+      dispatch(addUser(data));
       return true;
     }
     return false;
@@ -98,18 +100,18 @@ function StudentPage() {
 
   // Handle delete the user
   const handleDeleteUser = async () => {
-    const data = await deleteUser(idDelete);
+    const data = await deleteUserAPI(idDelete);
     if (data) {
-      dispatch(deleteStudent(idDelete));
+      dispatch(deleteUser(idDelete));
     }
   };
 
   // The function to handle editing the user
   const handleEditUser = async (user) => {
-    const data = await editUser(user);
+    const data = await editUserAPI(user);
     if (data) {
       setUserData(data);
-      dispatch(editStudent(user));
+      dispatch(editUser(user));
     }
   };
 
@@ -133,7 +135,7 @@ function StudentPage() {
   // Get current posts
   const indexOfLastTable = currentPage * tablePerPage;
   const indexOfFirstTable = indexOfLastTable - tablePerPage;
-  const currentTable = state.allStudents.slice(
+  const currentTable = state.allUsers.slice(
     indexOfFirstTable,
     indexOfLastTable,
   );
@@ -142,12 +144,12 @@ function StudentPage() {
   const handelClickChangeTable = (pageNumber) => setCurrentPage(pageNumber);
 
   useEffect(() => {
-    getStudentList();
+    getUserList();
   }, []);
 
   return (
     <div>
-      <div className={styles.student_container}>
+      <div className={styles.user_container}>
         <Title title="User" />
         <NormalButton
           className={styles.add_btn}
@@ -171,7 +173,7 @@ function StudentPage() {
           dataValue={userData}
           showModal={showModal}
           searchName={searchName}
-          allStudents={currentTable}
+          allUsers={currentTable}
         />
         <Modal
           onSubmit={
@@ -181,7 +183,7 @@ function StudentPage() {
               ? handleEditUser
               : handleDeleteUser
           }
-          defaultValue={type === MODAL_TYPE.ADD ? state.allStudents : userData}
+          defaultValue={type === MODAL_TYPE.ADD ? state.allUsers : userData}
           type={type}
           showModal={showModal}
           closeModal={handelCloseModal}
@@ -189,10 +191,10 @@ function StudentPage() {
       </div>
       <Pagination
         tablePerPage={tablePerPage}
-        totalTable={state.allStudents.length}
+        totalTable={state.allUsers.length}
         paginate={handelClickChangeTable}
       />
     </div>
   );
 }
-export default StudentPage;
+export default UserPage;

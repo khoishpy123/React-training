@@ -1,40 +1,40 @@
 import {
-  SET_ALL_STUDENTS,
+  SET_ALL_USERS,
   ADD_ITEM,
   DELETE_ITEM,
   EDIT_ITEM,
 } from '../constants/constants';
 
 export const initialState = {
-  allStudents: [], // All products
+  allUsers: [], // All products
 };
 
 export default function reducer(state, action) {
   switch (action.type) {
-    case SET_ALL_STUDENTS:
+    case SET_ALL_USERS:
       return {
-        allStudents: action.allStudents,
+        allUsers: action.allUsers,
       };
     case ADD_ITEM:
       return {
-        allStudents: [...state.allStudents, action.newStudent],
+        allUsers: [...state.allUsers, action.newUser],
       };
     case EDIT_ITEM:
       return {
         ...state,
-        allStudents: state.allStudents?.map((item) => {
-          if (item?.id === action.student?.id) return action.student;
+        allUsers: state.allUsers?.map((item) => {
+          if (item?.id === action.User?.id) return action.User;
           return item;
         }),
       };
     case DELETE_ITEM:
-      const deleteUser = state.allStudents.filter((item) => {
+      const deleteUser = state.allUsers.filter((item) => {
         if (item.id === action.id) return false;
         return true;
       });
       return {
         ...state,
-        allStudents: deleteUser,
+        allUsers: deleteUser,
       };
     default:
       throw new Error('Invalid action');
