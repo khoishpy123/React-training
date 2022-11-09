@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 
 // Import the Modal type
 import MODAL_TYPE from '../../constants/modalType';

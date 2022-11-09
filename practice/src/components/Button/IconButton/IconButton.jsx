@@ -1,5 +1,5 @@
-import { React, useState } from 'react';
-import PropTypes from 'prop-types';
+import { React } from 'react';
+
 import { Icon } from '@iconify/react';
 
 function IconButton({ isOpen, onClick, icon, className }) {
@@ -8,16 +8,9 @@ function IconButton({ isOpen, onClick, icon, className }) {
       <button type="button" onClick={onClick} className={className}>
         <Icon icon={icon} />
       </button>
-      {isOpen && (
-        <DropDownItem dropdownId={dropdownId} onclick={onclickEdit} />
-      )}
+      {isOpen && <DropDownItem dropdownId={dropdownId} onclick={onclickEdit} />}
     </>
   );
 }
-
-// IconButton.PropTypes = {
-//   onClick: PropTypes.func.isRequired,
-//   icon: PropTypes.string.isRequired,
-// };
 
 export default IconButton;
