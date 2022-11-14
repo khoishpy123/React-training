@@ -7,7 +7,6 @@ import MODAL_TYPE from '../../constants/modalType';
 import ModalContent from '../ModalContent/ModalContent';
 import IconBtn from '../Button/IconButton/IconButton';
 import Title from '../Title/Title';
-import NormalButton from '../Button/NormalButton/NormalButton';
 
 //styles
 import styles from './Modal.module.scss';
@@ -17,6 +16,7 @@ function Modal(props) {
 
   const [role, setRole] = useState('');
   const [name, setName] = useState('');
+  const [avatar, setAvatar] = useState();
   const [error, setError] = useState('');
   const [company, setCompany] = useState('');
 
@@ -56,17 +56,22 @@ function Modal(props) {
     setRole(e.target.value);
   };
 
+  const handleChangeAvatar = (e) => {
+    setAvatar(URL.createObjectURL(e.target.value));
+  };
+
   // The function to handle ADD or EDIt the products
   const handleAddOrEdit = () => {
     const data = {
       ...(type === MODAL_TYPE.EDIT && {
         id: defaultValue.id,
       }),
+      avatar,
       name,
       company,
       role,
     };
-    const isValid = name && company && role;
+    const isValid = name && company && role && avatar;
     if (!isValid) {
       setError('Please enter full information !!');
       return;
@@ -136,10 +141,12 @@ function Modal(props) {
             onCompanyChange={handleChangeCompany}
             roleValue={role}
             onRoleChange={handleChangeRole}
+            avatarValue={avatar}
+            onAvatarChange={handleChangeAvatar}
             onClick={handleClickSubmitForm}
           />
         )}
-        <NormalButton
+        <IconBtn
           text="Submit"
           className={styles.submitBtn}
           onClick={handleClickSubmitForm}

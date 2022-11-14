@@ -1,7 +1,7 @@
 import React from 'react';
 import Ellipsis from '../../components/Button/Ellipsis/Ellipsis';
 
-import './Table.module.scss';
+import styles from './Table.module.scss';
 
 export const Table = (props) => {
   const {
@@ -12,21 +12,33 @@ export const Table = (props) => {
     dataValue,
     showModal,
     searchName,
+    itemsPerPage,
+    currentPage,
   } = props;
+
+  // Get current posts
+  const indexOfLastTable = currentPage * itemsPerPage;
+  const indexOfFirstTable = indexOfLastTable - itemsPerPage;
+  const currentTable = allUsers.slice(indexOfFirstTable, indexOfLastTable);
 
   return (
     <>
-      <table>
+      <table className={styles.table_wrapper}>
         <thead>
           <tr>
+            <th>
+              <input type="checkbox" />
+            </th>
             <th>Name</th>
-            <th>company</th>
-            <th>role</th>
+            <th>Company</th>
+            <th>Role</th>
+            <th>Verified</th>
+            <th>Status</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
-          {allUsers
+          {currentTable
             ?.filter((item) => {
               if (searchName == '') {
                 return item;
@@ -38,9 +50,23 @@ export const Table = (props) => {
             })
             .map((item) => (
               <tr key={item.id}>
-                <td>{item.name}</td>
+                <td>
+                  <input type="checkbox" />
+                </td>
+                <td>
+                  <div className={styles.table_name}>
+                    <img
+                      src={item.avatar}
+                      alt="avatar image"
+                      className={styles.avatar_image}
+                    />
+                    <p className={styles.user_name}>{item.name}</p>
+                  </div>
+                </td>
                 <td>{item.company}</td>
                 <td>{item.role}</td>
+                <td>{item.verified}</td>
+                <td>{item.status}</td>
                 <td>
                   <Ellipsis
                     dropdownId={item.id}

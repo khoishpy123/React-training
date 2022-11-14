@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState, useCallback, useRef } from 'react';
+import { useContext, useEffect, useState, useRef } from 'react';
 
 //actions
 import {
@@ -24,7 +24,7 @@ import { Context } from '../../../store/Context';
 import MODAL_TYPE from '../../../constants/modalType';
 
 // Import the components
-import NormalButton from '../../../components/Button/NormalButton/NormalButton';
+import IconBtn from '../../../components/Button/IconButton/IconButton';
 import Table from '../../../components/Table/Table';
 import Search from '../../../components/Search/Search';
 import Filter from '../../../components/Button/Filter/Filter';
@@ -43,7 +43,9 @@ function UserPage() {
   const [userData, setUserData] = useState({});
   const [searchName, setSearchName] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-  const [tablePerPage] = useState(5);
+  const [itemsPerPage, setItemsPerPage] = useState(5);
+  const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(5);
+  const [minPageNumberLimit, setMinPageNumberLimit] = useState(0);
 
   const inputRef = useRef();
 
@@ -58,8 +60,6 @@ function UserPage() {
     }
   };
 
-  console.log(state.allUsers);
-
   const getUser = async (id) => {
     const data = await getUserApi(id);
     setUserData(data);
@@ -72,14 +72,11 @@ function UserPage() {
   };
 
   // Handle when the user clicks on the DELETE button.
-  const handleClickDelete = useCallback(
-    (id) => {
-      setType(MODAL_TYPE.DELETE);
-      setIdDelete(id);
-      setShowModal(true);
-    },
-    [idDelete],
-  );
+  const handleClickDelete = (id) => {
+    setType(MODAL_TYPE.DELETE);
+    setIdDelete(id);
+    setShowModal(true);
+  };
 
   // handel when the user clicks delete
   const handleClickEdit = (id) => {
@@ -132,16 +129,19 @@ function UserPage() {
     inputRef.current.focus();
   };
 
-  // Get current posts
-  const indexOfLastTable = currentPage * tablePerPage;
-  const indexOfFirstTable = indexOfLastTable - tablePerPage;
-  const currentTable = state.allUsers.slice(
-    indexOfFirstTable,
-    indexOfLastTable,
-  );
+  // the function to handle when click next button in the pagination
+  const handleNextBtn = () => {
+    setCurrentPage(currentPage + 1);
+    setMinPageNumberLimit(minPageNumberLimit + 5);
+    setMaxPageNumberLimit(maxPageNumberLimit + 5);
+  };
 
-  // Change page
-  const handelClickChangeTable = (pageNumber) => setCurrentPage(pageNumber);
+  // the function to handle when click prev button in the pagination
+  const handlePrevBtn = () => {
+    setCurrentPage(currentPage - 1);
+    setMinPageNumberLimit(minPageNumberLimit - 5);
+    setMaxPageNumberLimit(maxPageNumberLimit - 5);
+  };
 
   useEffect(() => {
     getUserList();
@@ -151,9 +151,10 @@ function UserPage() {
     <div>
       <div className={styles.user_container}>
         <Title title="User" />
-        <NormalButton
+        <IconBtn
           className={styles.add_btn}
-          text="ADD NEW USER"
+          text="New User"
+          icon={'fe:plus'}
           onClick={handleClickAdd}
         />
       </div>
@@ -173,7 +174,9 @@ function UserPage() {
           dataValue={userData}
           showModal={showModal}
           searchName={searchName}
-          allUsers={currentTable}
+          allUsers={state.allUsers}
+          currentPage={currentPage}
+          itemsPerPage={itemsPerPage}
         />
         <Modal
           onSubmit={
@@ -188,12 +191,17 @@ function UserPage() {
           showModal={showModal}
           closeModal={handelCloseModal}
         />
+        <Pagination
+          itemsPerPage={itemsPerPage}
+          setItemsPerPage={setItemsPerPage}
+          setCurrentPage={setCurrentPage}
+          currentPage={currentPage}
+          onClickNextBtn={handleNextBtn}
+          onClickPrevBtn={handlePrevBtn}
+          minPageNumberLimit={minPageNumberLimit}
+          maxPageNumberLimit={maxPageNumberLimit}
+        />
       </div>
-      <Pagination
-        tablePerPage={tablePerPage}
-        totalTable={state.allUsers.length}
-        paginate={handelClickChangeTable}
-      />
     </div>
   );
 }

@@ -1,5 +1,3 @@
-import NormalButton from '../Button/NormalButton/NormalButton';
-
 import styles from '../Modal/Modal.module.scss';
 
 function ModalContent(props) {
@@ -10,6 +8,8 @@ function ModalContent(props) {
     onNameChange,
     onCompanyChange,
     onRoleChange,
+    onAvatarChange,
+    avatarValue,
   } = props;
 
   return (
@@ -20,6 +20,9 @@ function ModalContent(props) {
         autoComplete="off"
         method="get"
       >
+        <label htmlFor="avatar">chose avatar</label>
+        <input type="file" value={avatarValue} onChange={onAvatarChange} />
+        <br />
         <input
           placeholder="Enter Name"
           value={nameValue}
@@ -41,6 +44,13 @@ function ModalContent(props) {
           onChange={onRoleChange}
         />
         <br />
+        <select>
+          <option value="">Select status </option>
+          <option value="">Active</option>
+          <option value="">Banned</option>
+        </select>
+        <br />
+        <input type="checkbox"></input>
       </form>
     </>
   );

@@ -1,27 +1,48 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
+
+import { Context } from '../../store/Context';
+
+// Import the components
+import IconButton from '../Button/IconButton/IconButton';
+
 import styles from './Pagination.module.scss';
 
-const Pagination = ({ tablePerPage, totalTable, paginate }) => {
-  const pageNumbers = [];
+const Pagination = (props) => {
+  const {
+    currentPage,
+    onClickNextBtn,
+    onClickPrevBtn,
+    minPageNumberLimit,
+    maxPageNumberLimit,
+  } = props;
+  const [state] = useContext(Context);
+  const [itemsPerPage] = useState(5);
+  const pages = [];
 
-  for (let i = 1; i <= Math.ceil(totalTable / tablePerPage); i++) {
-    pageNumbers.push(i);
+  for (let i = 1; i <= Math.ceil(state.allUsers.length / itemsPerPage); i++) {
+    pages.push(i);
   }
 
   return (
-    <nav className={styles.wrapper}>
-      <ul className={styles.pagination}>
-        {pageNumbers.map((number) => (
-          <li
-            key={number}
-            className={styles.page_item}
-            onClick={() => paginate(number)}
-          >
-            <a className={styles.page_link}>{number}</a>
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <div className={styles.wrapper}>
+      <div className={styles.spacer}></div>
+      <div></div>
+      <p className={styles.disPlayedRows}>
+        {minPageNumberLimit + 1}-{maxPageNumberLimit} of {state.allUsers.length}
+      </p>
+      <div className={styles.changePage_btn}>
+        <IconButton
+          onClick={onClickPrevBtn}
+          disabled={currentPage === pages[0]}
+          icon="grommet-icons:previous"
+        />
+        <IconButton
+          onClick={onClickNextBtn}
+          disabled={currentPage === pages[pages.length - 1]}
+          icon="grommet-icons:next"
+        />
+      </div>
+    </div>
   );
 };
 

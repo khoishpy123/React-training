@@ -1,5 +1,5 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React from "react";
+import ReactDOM from "react-dom/client";
 // import Gift from './RandomGift'
 // import App from './App'
 // import App from './TwoWayBindDing'
@@ -9,11 +9,12 @@ import ReactDOM from 'react-dom/client'
 // import App from './UseEffectWithTImer';
 // import App from './UseEffectWithAvatar';
 // import App from './UseMemo';
-import App from './UseReducer';
-import './index.css'
+// import App from './UseReducer';
+import Form from "./form";
+import "./index.css";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-//   <React.StrictMode>
-    <App/>
-//   </React.StrictMode>
-)
+ReactDOM.createRoot(document.getElementById("root")).render(
+  //   <React.StrictMode>
+  <Form />
+  //   </React.StrictMode>
+);

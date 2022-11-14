@@ -2,13 +2,20 @@ import { React } from 'react';
 
 import { Icon } from '@iconify/react';
 
-function IconButton({ isOpen, onClick, icon, className }) {
+import styles from './IconButton.scss';
+
+function IconButton({ onClick, icon, className, text, disabled }) {
   return (
     <>
-      <button type="button" onClick={onClick} className={className}>
+      <button
+        type="button"
+        onClick={onClick}
+        className={className}
+        disabled={disabled}
+      >
         <Icon icon={icon} />
+        {text}
       </button>
-      {isOpen && <DropDownItem dropdownId={dropdownId} onclick={onclickEdit} />}
     </>
   );
 }

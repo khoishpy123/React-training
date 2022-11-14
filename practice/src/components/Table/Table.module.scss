@@ -44,3 +44,16 @@ table {
     }
   }
 }
+
+.table_name {
+  display: flex;
+  align-items: center;
+}
+
+.user_name {
+  margin-left: 16px;
+}
+
+.avatar_image {
+  border-radius: 50%;
+}
