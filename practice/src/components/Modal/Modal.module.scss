@@ -5,26 +5,35 @@
   transform: translate(-50%, -50%);
   background-color: #fff;
   padding: 20px;
+  border-radius: 8px;
   text-align: center;
-  box-shadow: rgb(145 158 171 / 28%) 0px 0px 2px 0px, rgb(145 158 171 / 23%) 0px 25px 24px -4px;
+  z-index: 3;
+  box-shadow: rgb(145 158 171 / 28%) 0px 0px 2px 0px,
+    rgb(145 158 171 / 23%) 0px 25px 24px -4px;
 }
 
 .modal_container {
   width: 450px;
 }
 
-.input_form {
+.name_label {
+  float: left;
   margin: 10px auto;
+}
+
+.input_form {
   font-size: 20px;
-  width: 90%;
+  width: 100%;
   padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #e0e1e7;
 }
 
 .darkBG {
   background-color: rgba(0, 0, 0, 0.2);
   width: 100vw;
   height: 100vh;
-  z-index: 0;
+  z-index: 3;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -144,4 +153,12 @@
   box-shadow: none;
   transform: none;
   background: whitesmoke;
+}
+
+.form_select {
+  font-size: 20px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #e0e1e7;
 }

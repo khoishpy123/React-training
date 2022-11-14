@@ -9,6 +9,9 @@ function Search(props) {
 
   return (
     <div className={styles.search}>
+      <button className={styles.search_btn}>
+        <Icon icon="ant-design:search-outlined" />
+      </button>
       <input
         ref={inputRef}
         value={searchName}
@@ -21,9 +24,6 @@ function Search(props) {
           <Icon icon="ant-design:close-circle-filled" />
         </button>
       )}
-      <button className={styles.search_btn}>
-        <Icon icon="ant-design:search-outlined" />
-      </button>
     </div>
   );
 }
