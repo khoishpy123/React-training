@@ -10,7 +10,7 @@ function Sidebar() {
       <div className={styles.box_content}>
         <div className={styles.box_avatar}>
           <div className={styles.avatar_image}></div>
-          <div></div>
+          <h6 className={styles.avatar_name}>Jay Frankie</h6>
         </div>
       </div>
       <div>
@@ -21,7 +21,7 @@ function Sidebar() {
             icon={<Icon icon="ant-design:line-chart-outlined" />}
           />
           <MenuItem
-            title="Student"
+            title="User"
             to={config.routes.user}
             icon={<Icon icon="bxs:user-rectangle" />}
           />

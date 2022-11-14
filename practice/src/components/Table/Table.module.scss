@@ -57,3 +57,11 @@ table {
 .avatar_image {
   border-radius: 50%;
 }
+
+input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  padding: 9px;
+  color: rgb(99, 115, 129);
+}

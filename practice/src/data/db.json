@@ -6,7 +6,7 @@
       "name": "Bernard Pacitti",
       "company": "Thoughtsphere",
       "role": "Construction Manager",
-      "status": "87504",
+      "status": "Active",
       "verified": true
     },
     {
@@ -15,7 +15,7 @@
       "name": "Alphard Allard",
       "company": "Rhynyx",
       "role": "Construction Expeditor",
-      "status": null,
+      "status": "Banned",
       "verified": false
     },
     {
@@ -24,7 +24,7 @@
       "name": "Toby Hebard",
       "company": "Yozio",
       "role": "Architect",
-      "status": null,
+      "status": "Banned",
       "verified": false
     },
     {
@@ -33,7 +33,7 @@
       "name": "Laraine Simmill",
       "company": "Yodel",
       "role": "Subcontractor",
-      "status": "1917",
+      "status": "Active",
       "verified": false
     },
     {
@@ -42,7 +42,7 @@
       "name": "Ranna Shane",
       "company": "Abata",
       "role": "Surveyor",
-      "status": null,
+      "status": "Banned",
       "verified": true
     },
     {
@@ -51,7 +51,7 @@
       "name": "Matthiew Lemm",
       "company": "Devpoint",
       "role": "Electrician",
-      "status": null,
+      "status": "Banned",
       "verified": false
     },
     {
@@ -60,7 +60,7 @@
       "name": "Clare Swatheridge",
       "company": "Skynoodle",
       "role": "Surveyor",
-      "status": "28300-000",
+      "status": "Active",
       "verified": true
     },
     {
@@ -69,7 +69,7 @@
       "name": "Anallise Dellenty",
       "company": "Reallinks",
       "role": "Estimator",
-      "status": "T5G",
+      "status": "Active",
       "verified": false
     },
     {
@@ -78,7 +78,7 @@
       "name": "Biron Backshall",
       "company": "Plajo",
       "role": "Construction Manager",
-      "status": null,
+      "status": "Banned",
       "verified": false
     },
     {
@@ -87,7 +87,7 @@
       "name": "Sibylle Wilfinger",
       "company": "Minyx",
       "role": "Construction Manager",
-      "status": "981 80",
+      "status": "Active",
       "verified": false
     },
     {
@@ -96,7 +96,7 @@
       "name": "Flin Fawdry",
       "company": "Lajo",
       "role": "Construction Worker",
-      "status": "T1K",
+      "status": "Active",
       "verified": false
     },
     {
@@ -105,7 +105,7 @@
       "name": "Zebedee Schwandner",
       "company": "Twitterwire",
       "role": "Supervisor",
-      "status": "113 80",
+      "status": "Active",
       "verified": true
     },
     {
@@ -114,7 +114,7 @@
       "name": "Ricca Irons",
       "company": "Yoveo",
       "role": "Project Manager",
-      "status": null,
+      "status": "Banned",
       "verified": true
     },
     {
@@ -123,7 +123,7 @@
       "name": "Moss Ianinotti",
       "company": "Edgetag",
       "role": "Engineer",
-      "status": "47707",
+      "status": "Active",
       "verified": false
     },
     {
@@ -132,7 +132,7 @@
       "name": "Carolee Curds",
       "company": "Shufflebeat",
       "role": "Supervisor",
-      "status": null,
+      "status": "Banned",
       "verified": true
     },
     {
@@ -141,7 +141,7 @@
       "name": "Selina Lambot",
       "company": "Topdrive",
       "role": "Subcontractor",
-      "status": null,
+      "status": "Banned",
       "verified": true
     },
     {
@@ -150,7 +150,7 @@
       "name": "Denver Athowe",
       "company": "Katz",
       "role": "Construction Expeditor",
-      "status": "303666",
+      "status": "Active",
       "verified": true
     },
     {
@@ -159,7 +159,7 @@
       "name": "Prent Donald",
       "company": "Gigazoom",
       "role": "Supervisor",
-      "status": "10109",
+      "status": "Active",
       "verified": false
     },
     {
@@ -168,7 +168,7 @@
       "name": "Jimmie Whapple",
       "company": "Voomm",
       "role": "Construction Expeditor",
-      "status": null,
+      "status": "Banned",
       "verified": false
     },
     {
@@ -177,7 +177,7 @@
       "name": "Koralle Argue",
       "company": "Yodoo",
       "role": "Architect",
-      "status": null,
+      "status": "Banned",
       "verified": false
     },
     {
@@ -186,7 +186,7 @@
       "name": "Violante Mulvaney",
       "company": "Yadel",
       "role": "Subcontractor",
-      "status": "H12",
+      "status": "Active",
       "verified": false
     },
     {
@@ -195,7 +195,7 @@
       "name": "Syd Leckey",
       "company": "Thoughtsphere",
       "role": "Project Manager",
-      "status": "32450-000",
+      "status": "Active",
       "verified": false
     },
     {
@@ -204,7 +204,7 @@
       "name": "Irv Jochanany",
       "company": "Mydeo",
       "role": "Estimator",
-      "status": "S4A",
+      "status": "Active",
       "verified": true
     },
     {
@@ -213,7 +213,7 @@
       "name": "Livvy Steele",
       "company": "Skiptube",
       "role": "Supervisor",
-      "status": "623718",
+      "status": "Active",
       "verified": true
     },
     {
@@ -222,7 +222,7 @@
       "name": "Schuyler Garbutt",
       "company": "Vinte",
       "role": "Estimator",
-      "status": "366134",
+      "status": "Active",
       "verified": true
     },
     {
@@ -231,7 +231,7 @@
       "name": "Chaddy Filyaev",
       "company": "Meezzy",
       "role": "Architect",
-      "status": "8301",
+      "status": "Active",
       "verified": false
     },
     {
@@ -240,7 +240,7 @@
       "name": "Jacquenette Zoppie",
       "company": "Kanoodle",
       "role": "Construction Manager",
-      "status": "78067 CEDEX",
+      "status": "Active",
       "verified": true
     },
     {
@@ -249,7 +249,7 @@
       "name": "Ivie McNelis",
       "company": "Quinu",
       "role": "Construction Worker",
-      "status": null,
+      "status": "Banned",
       "verified": true
     },
     {
@@ -258,7 +258,7 @@
       "name": "Georgiana Morphet",
       "company": "Meejo",
       "role": "Architect",
-      "status": null,
+      "status": "Banned",
       "verified": false
     },
     {
@@ -267,7 +267,7 @@
       "name": "Jessamine Jatczak",
       "company": "Bubblemix",
       "role": "Surveyor",
-      "status": "40510",
+      "status": "Active",
       "verified": true
     },
     {
@@ -276,7 +276,7 @@
       "name": "Devora Turland",
       "company": "Photobug",
       "role": "Architect",
-      "status": "G6E",
+      "status": "Active",
       "verified": true
     },
     {
@@ -285,7 +285,7 @@
       "name": "Bianca Ricards",
       "company": "Trupe",
       "role": "Construction Expeditor",
-      "status": "2425-839",
+      "status": "Active",
       "verified": false
     },
     {
@@ -294,7 +294,7 @@
       "name": "Yehudi Livoir",
       "company": "Quatz",
       "role": "Project Manager",
-      "status": null,
+      "status": "Banned",
       "verified": true
     },
     {
@@ -303,7 +303,7 @@
       "name": "Clement Rous",
       "company": "Jaxnation",
       "role": "Supervisor",
-      "status": "52140",
+      "status": "Active",
       "verified": true
     },
     {
@@ -312,7 +312,7 @@
       "name": "Laurie Medina",
       "company": "Twimbo",
       "role": "Estimator",
-      "status": "4703",
+      "status": "Active",
       "verified": false
     },
     {
@@ -321,7 +321,7 @@
       "name": "Rani Carles",
       "company": "Rhybox",
       "role": "Construction Worker",
-      "status": null,
+      "status": "Banned",
       "verified": true
     },
     {
@@ -330,7 +330,7 @@
       "name": "Crista Jull",
       "company": "Riffpath",
       "role": "Supervisor",
-      "status": null,
+      "status": "Banned",
       "verified": false
     },
     {
@@ -339,7 +339,7 @@
       "name": "Richy Persence",
       "company": "Innojam",
       "role": "Surveyor",
-      "status": "7300-006",
+      "status": "Active",
       "verified": false
     },
     {
@@ -348,7 +348,7 @@
       "name": "Husain Neising",
       "company": "Browsecat",
       "role": "Surveyor",
-      "status": "L-9098",
+      "status": "Active",
       "verified": false
     },
     {
@@ -357,7 +357,7 @@
       "name": "Dorita Skehan",
       "company": "Feedspan",
       "role": "Supervisor",
-      "status": null,
+      "status": "Banned",
       "verified": false
     },
     {
@@ -366,7 +366,7 @@
       "name": "Melli Cullin",
       "company": "Bluejam",
       "role": "Project Manager",
-      "status": null,
+      "status": "Banned",
       "verified": false
     },
     {
@@ -375,7 +375,7 @@
       "name": "Christoph Dye",
       "company": "Photojam",
       "role": "Surveyor",
-      "status": "3899",
+      "status": "Active",
       "verified": false
     },
     {
@@ -384,7 +384,7 @@
       "name": "Paulette Dalliwatr",
       "company": "Digitube",
       "role": "Estimator",
-      "status": null,
+      "status": "Banned",
       "verified": false
     },
     {
@@ -393,7 +393,7 @@
       "name": "Allianora Hove",
       "company": "Myworks",
       "role": "Engineer",
-      "status": "74116",
+      "status": "Active",
       "verified": false
     },
     {
@@ -402,7 +402,7 @@
       "name": "Iain Leese",
       "company": "Jabbersphere",
       "role": "Project Manager",
-      "status": null,
+      "status": "Banned",
       "verified": true
     },
     {
@@ -411,7 +411,7 @@
       "name": "Shadow Kayne",
       "company": "Demivee",
       "role": "Supervisor",
-      "status": "04016 CEDEX",
+      "status": "Active",
       "verified": false
     },
     {
@@ -420,7 +420,7 @@
       "name": "Fee Gleeton",
       "company": "Yotz",
       "role": "Construction Expeditor",
-      "status": null,
+      "status": "Banned",
       "verified": true
     },
     {
@@ -429,7 +429,7 @@
       "name": "Corrianne Santi",
       "company": "Reallinks",
       "role": "Surveyor",
-      "status": "11403",
+      "status": "Active",
       "verified": false
     },
     {
@@ -438,7 +438,7 @@
       "name": "Rosalinda Schwanden",
       "company": "Dynazzy",
       "role": "Construction Foreman",
-      "status": "7104",
+      "status": "Active",
       "verified": false
     },
     {
@@ -447,7 +447,7 @@
       "name": "Robinia Pignon",
       "company": "Einti",
       "role": "Supervisor",
-      "status": "3105-222",
+      "status": "Active",
       "verified": true
     },
     {
@@ -456,7 +456,7 @@
       "name": "Deanne Ivens",
       "company": "Feedfire",
       "role": "Engineer",
-      "status": null,
+      "status": "Banned",
       "verified": true
     },
     {
@@ -465,7 +465,7 @@
       "name": "Morgen Colleck",
       "company": "Gabspot",
       "role": "Estimator",
-      "status": "65430-000",
+      "status": "Active",
       "verified": true
     },
     {
@@ -474,7 +474,7 @@
       "name": "Abdel Knowlden",
       "company": "Browsetype",
       "role": "Subcontractor",
-      "status": null,
+      "status": "Banned",
       "verified": true
     },
     {
@@ -483,7 +483,7 @@
       "name": "Miles Medlar",
       "company": "Realbuzz",
       "role": "Construction Foreman",
-      "status": null,
+      "status": "Banned",
       "verified": true
     },
     {
@@ -492,7 +492,7 @@
       "name": "Whitney Yandell",
       "company": "Feedfish",
       "role": "Construction Expeditor",
-      "status": null,
+      "status": "Banned",
       "verified": true
     },
     {
@@ -501,7 +501,7 @@
       "name": "Mar Cardnell",
       "company": "Photospace",
       "role": "Architect",
-      "status": null,
+      "status": "Banned",
       "verified": true
     },
     {
@@ -510,7 +510,7 @@
       "name": "Georg Castellone",
       "company": "Zoozzy",
       "role": "Construction Expeditor",
-      "status": "520-0804",
+      "status": "Active",
       "verified": true
     },
     {
@@ -519,7 +519,7 @@
       "name": "Allys Ilson",
       "company": "Izio",
       "role": "Architect",
-      "status": "899-1741",
+      "status": "Active",
       "verified": true
     },
     {
@@ -528,7 +528,7 @@
       "name": "Benyamin Baison",
       "company": "Twimbo",
       "role": "Subcontractor",
-      "status": "5206",
+      "status": "Active",
       "verified": true
     },
     {
@@ -537,7 +537,7 @@
       "name": "Marty Chiene",
       "company": "Teklist",
       "role": "Construction Expeditor",
-      "status": null,
+      "status": "Banned",
       "verified": false
     },
     {
@@ -546,7 +546,7 @@
       "name": "Carmine Storre",
       "company": "Eayo",
       "role": "Architect",
-      "status": null,
+      "status": "Banned",
       "verified": false
     },
     {
@@ -555,7 +555,7 @@
       "name": "Derward Grestie",
       "company": "Buzzdog",
       "role": "Construction Expeditor",
-      "status": "10009",
+      "status": "Active",
       "verified": false
     },
     {
@@ -564,7 +564,7 @@
       "name": "Jorie Ketchen",
       "company": "Twitterworks",
       "role": "Surveyor",
-      "status": null,
+      "status": "Banned",
       "verified": true
     },
     {
@@ -573,7 +573,7 @@
       "name": "Lombard Tulip",
       "company": "Mydeo",
       "role": "Supervisor",
-      "status": null,
+      "status": "Banned",
       "verified": false
     },
     {
@@ -582,7 +582,7 @@
       "name": "Stevana McAndie",
       "company": "Riffpath",
       "role": "Construction Manager",
-      "status": null,
+      "status": "Banned",
       "verified": false
     },
     {
@@ -591,7 +591,7 @@
       "name": "Gaspard Willowby",
       "company": "Wikizz",
       "role": "Supervisor",
-      "status": "62150",
+      "status": "Active",
       "verified": true
     },
     {
@@ -600,7 +600,7 @@
       "name": "Melantha Fretson",
       "company": "Demimbu",
       "role": "Project Manager",
-      "status": null,
+      "status": "Banned",
       "verified": false
     },
     {
@@ -609,7 +609,7 @@
       "name": "Rena Swyer",
       "company": "Yombu",
       "role": "Construction Expeditor",
-      "status": null,
+      "status": "Banned",
       "verified": true
     },
     {
@@ -618,7 +618,7 @@
       "name": "Erl Piatti",
       "company": "Vidoo",
       "role": "Electrician",
-      "status": "7508",
+      "status": "Active",
       "verified": false
     },
     {
@@ -627,7 +627,7 @@
       "name": "Glen Aujean",
       "company": "Ailane",
       "role": "Electrician",
-      "status": null,
+      "status": "Banned",
       "verified": true
     },
     {
@@ -636,7 +636,7 @@
       "name": "Vanni Gallahar",
       "company": "Myworks",
       "role": "Construction Manager",
-      "status": "430 01",
+      "status": "Active",
       "verified": false
     },
     {
@@ -645,7 +645,7 @@
       "name": "Ardath Ferrao",
       "company": "Topicblab",
       "role": "Electrician",
-      "status": "78975-000",
+      "status": "Active",
       "verified": false
     },
     {
@@ -654,7 +654,7 @@
       "name": "Dwayne Moneti",
       "company": "Ntags",
       "role": "Engineer",
-      "status": "4120",
+      "status": "Active",
       "verified": true
     },
     {
@@ -663,7 +663,7 @@
       "name": "Hazel Salters",
       "company": "Quimba",
       "role": "Construction Foreman",
-      "status": "2200",
+      "status": "Active",
       "verified": false
     },
     {
@@ -672,7 +672,7 @@
       "name": "Audrie Melmar",
       "company": "Linktype",
       "role": "Estimator",
-      "status": null,
+      "status": "Banned",
       "verified": true
     },
     {
@@ -681,7 +681,7 @@
       "name": "Kristoffer Cops",
       "company": "Browsecat",
       "role": "Construction Expeditor",
-      "status": "29560-000",
+      "status": "Active",
       "verified": true
     },
     {
@@ -690,7 +690,7 @@
       "name": "Tracie Scales",
       "company": "Fanoodle",
       "role": "Architect",
-      "status": null,
+      "status": "Banned",
       "verified": true
     },
     {
@@ -699,7 +699,7 @@
       "name": "Caty Ricarde",
       "company": "Browsetype",
       "role": "Engineer",
-      "status": null,
+      "status": "Banned",
       "verified": true
     }
   ]
