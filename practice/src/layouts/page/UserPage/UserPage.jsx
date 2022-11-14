@@ -29,7 +29,6 @@ import Table from '../../../components/Table/Table';
 import Search from '../../../components/Search/Search';
 import Filter from '../../../components/Button/Filter/Filter';
 import Modal from '../../../components/Modal/Modal';
-import Title from '../../../components/Title/Title';
 import Pagination from '../../../components/Pagination/Pagination';
 
 // import styles
@@ -150,7 +149,7 @@ function UserPage() {
   return (
     <div>
       <div className={styles.user_container}>
-        <Title title="User" />
+        <h2>User</h2>
         <IconBtn
           className={styles.add_btn}
           text="New User"

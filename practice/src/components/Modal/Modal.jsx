@@ -6,7 +6,6 @@ import MODAL_TYPE from '../../constants/modalType';
 //import Component
 import ModalContent from '../ModalContent/ModalContent';
 import IconBtn from '../Button/IconButton/IconButton';
-import Title from '../Title/Title';
 
 //styles
 import styles from './Modal.module.scss';
@@ -116,15 +115,14 @@ function Modal(props) {
           onClick={closeModal}
           className={styles.closeBtn}
         />
-        <Title
-          title={
-            type === MODAL_TYPE.EDIT
-              ? 'Edit the user'
-              : type === MODAL_TYPE.ADD
-              ? 'Add new user'
-              : 'Delete the user'
-          }
-        />
+        <h2>
+          {type === MODAL_TYPE.EDIT
+            ? 'Edit the user'
+            : type === MODAL_TYPE.ADD
+            ? 'Add new user'
+            : 'Delete the user'}
+        </h2>
+
         {type === MODAL_TYPE.DELETE ? (
           <div>
             <h2>Are you sure ?</h2>
