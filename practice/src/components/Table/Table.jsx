@@ -1,5 +1,5 @@
 import React from 'react';
-import Ellipsis from '../../components/Button/Ellipsis/Ellipsis';
+import DropDownItem from '../../components/DropDownItem/DropDownItem';
 
 import styles from './Table.module.scss';
 
@@ -68,13 +68,10 @@ export const Table = (props) => {
                 <td>{item.verified}</td>
                 <td>{item.status}</td>
                 <td>
-                  <Ellipsis
+                  <DropDownItem
                     dropdownId={item.id}
                     onClickE={onClickDelete}
                     onClickEdit={onClickEdit}
-                    type={type}
-                    dataValue={dataValue}
-                    showModal={showModal}
                   />
                 </td>
               </tr>

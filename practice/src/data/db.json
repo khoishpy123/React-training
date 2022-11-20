@@ -1,15 +1,6 @@
 {
   "users": [
     {
-      "id": 1,
-      "avatar": "https://robohash.org/inomniseum.jpg?size=50x50&set=set1",
-      "name": "Bernard Pacitti",
-      "company": "Thoughtsphere",
-      "role": "Construction Manager",
-      "status": "Active",
-      "verified": true
-    },
-    {
       "id": 2,
       "avatar": "https://robohash.org/nemorepudiandaealias.jpg?size=50x50&set=set1",
       "name": "Alphard Allard",
@@ -695,12 +686,25 @@
     },
     {
       "id": 88,
-      "avatar": "https://robohash.org/pariaturestdolorem.jpg?size=50x50&set=set1",
+      "avatar": {
+        "preview": "https://robohash.org/pariaturestdolorem.jpg?size=50x50&set=set1"
+      },
       "name": "Caty Ricarde",
       "company": "Browsetype",
       "role": "Engineer",
       "status": "Banned",
       "verified": true
+    },
+    {
+      "avatar": {
+        "preview": "blob:http://127.0.0.1:5173/e1e6a534-0404-45ee-8678-2089d2322537"
+      },
+      "name": "1",
+      "company": "1",
+      "role": "1",
+      "status": "",
+      "verified": false,
+      "id": 89
     }
   ]
 }

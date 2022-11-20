@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import MODAL_TYPE from '../../constants/modalType';
 
 //import Component
-import ModalContent from '../ModalContent/ModalContent';
 import IconBtn from '../Button/IconButton/IconButton';
 
 //styles
@@ -13,9 +12,11 @@ import styles from './Modal.module.scss';
 function Modal(props) {
   const { showModal, closeModal, onSubmit, type, defaultValue } = props;
 
-  const [role, setRole] = useState('');
-  const [name, setName] = useState('');
   const [avatar, setAvatar] = useState();
+  const [name, setName] = useState('');
+  const [role, setRole] = useState('');
+  const [status, setStatus] = useState('');
+  const [verified, setVerified] = useState(Boolean);
   const [error, setError] = useState('');
   const [company, setCompany] = useState('');
 
@@ -26,19 +27,43 @@ function Modal(props) {
       setName('');
       setCompany('');
       setRole('');
+      setVerified(false);
+      setStatus('');
     }
     //If the modal type is EDIT, the input field will be replaced by the fetched data.
     else {
-      if (defaultValue.name && defaultValue.company && defaultValue.role) {
+      if (
+        defaultValue.name &&
+        defaultValue.company &&
+        defaultValue.role &&
+        defaultValue.status &&
+        defaultValue.avatar &&
+        defaultValue.verified
+      ) {
+        setAvatar(defaultValue.avatar);
         setName(defaultValue.name);
         setCompany(defaultValue.company);
         setRole(defaultValue.role);
+        setStatus(defaultValue.status);
+        setVerified(defaultValue.verified_btn);
       }
     }
     return () => {
       setError('');
     };
   }, [showModal]);
+
+  useEffect(() => {
+    return () => {
+      avatar && URL.revokeObjectURL(avatar.preview);
+    };
+  }, [avatar]);
+
+  const handlePreviewAvatar = (e) => {
+    const file = e.target.files[0];
+    file.preview = URL.createObjectURL(file);
+    setAvatar(file);
+  };
 
   // The function to handle changing the name
   const handleChangeName = (e) => {
@@ -55,9 +80,17 @@ function Modal(props) {
     setRole(e.target.value);
   };
 
-  const handleChangeAvatar = (e) => {
-    setAvatar(URL.createObjectURL(e.target.value));
-  };
+  // const handleChangeAvatar = (e) => {
+  //   setAvatar(e.target.value);
+  // };
+
+  // const handleChangeStatus = (e) => {
+  //   setStatus(e.target.value);
+  // };
+
+  // const handleChangeVerified = (e) => {
+  //   setVerified(e.target.value);
+  // };
 
   // The function to handle ADD or EDIt the products
   const handleAddOrEdit = () => {
@@ -69,6 +102,8 @@ function Modal(props) {
       name,
       company,
       role,
+      status,
+      verified,
     };
     const isValid = name && company && role && avatar;
     if (!isValid) {
@@ -115,13 +150,13 @@ function Modal(props) {
           onClick={closeModal}
           className={styles.closeBtn}
         />
-        <h2>
+        <h1>
           {type === MODAL_TYPE.EDIT
             ? 'Edit the user'
             : type === MODAL_TYPE.ADD
             ? 'Add new user'
             : 'Delete the user'}
-        </h2>
+        </h1>
 
         {type === MODAL_TYPE.DELETE ? (
           <div>
@@ -132,17 +167,80 @@ function Modal(props) {
             </p>
           </div>
         ) : (
-          <ModalContent
-            nameValue={name}
-            onNameChange={handleChangeName}
-            companyValue={company}
-            onCompanyChange={handleChangeCompany}
-            roleValue={role}
-            onRoleChange={handleChangeRole}
-            avatarValue={avatar}
-            onAvatarChange={handleChangeAvatar}
-            onClick={handleClickSubmitForm}
-          />
+          <form
+            action=""
+            className={styles.modal_container}
+            autoComplete="off"
+            method="get"
+          >
+            <div className={styles.avatar_block}>
+              <div className={styles.avatar_user}>
+                {/* <label htmlFor="avatar">chose avatar</label> */}
+                {avatar && (
+                  <img
+                    src={avatar.preview}
+                    alt="image"
+                    className={styles.avatar_img}
+                  />
+                )}
+              </div>
+              <div className={styles.mr_l_10}>
+                <input
+                  type="file"
+                  onChange={handlePreviewAvatar}
+                  className={styles.avatar_input}
+                />
+              </div>
+            </div>
+            <div>
+              <label htmlFor="name" className={styles.name_label}>
+                Name
+              </label>
+              <input
+                placeholder="Enter Name"
+                value={name}
+                className={styles.input_form}
+                onChange={handleChangeName}
+              />
+            </div>
+            <div>
+              <label htmlFor="name" className={styles.name_label}>
+                Company
+              </label>
+              <input
+                placeholder="Enter Company"
+                className={styles.input_form}
+                value={company}
+                onChange={handleChangeCompany}
+              />
+            </div>
+            <div>
+              <label htmlFor="name" className={styles.name_label}>
+                Role
+              </label>
+              <input
+                placeholder="Enter Role"
+                className={styles.input_form}
+                value={role}
+                onChange={handleChangeRole}
+              />
+            </div>
+            <div>
+              <label htmlFor="status" className={styles.name_label}>
+                Status
+              </label>
+              <select className={styles.form_select}>
+                <option value="">Select status </option>
+                <option value="Active">Active</option>
+                <option value="Banned">Banned</option>
+              </select>
+            </div>
+            <br />
+            <div className={styles.verified_btn}>
+              <input type="checkbox" />
+              <label htmlFor="verified">Verified</label>
+            </div>
+          </form>
         )}
         <IconBtn
           text="Submit"
