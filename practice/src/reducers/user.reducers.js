@@ -1,22 +1,24 @@
 import {
-  SET_ALL_USERS,
   ADD_ITEM,
-  DELETE_ITEM,
   EDIT_ITEM,
+  DELETE_ITEM,
+  SET_ALL_USERS,
 } from '../constants/constants';
 
 export const initialState = {
-  allUsers: [], // All products
+  allUsers: [], // All users
 };
 
 export default function reducer(state, action) {
   switch (action.type) {
     case SET_ALL_USERS:
       return {
+        ...state,
         allUsers: action.allUsers,
       };
     case ADD_ITEM:
       return {
+        ...state,
         allUsers: [...state.allUsers, action.newUser],
       };
     case EDIT_ITEM:

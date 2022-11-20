@@ -2,7 +2,7 @@
 import React, { useReducer } from 'react';
 
 //store
-import { Context } from './Context';
+import Context from './Context';
 
 //reducer
 import reducer, { initialState } from '../reducers/user.reducers';
@@ -12,7 +12,9 @@ import reducer, { initialState } from '../reducers/user.reducers';
 const Provider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   return (
-    <Context.Provider value={[state, dispatch]}>{children}</Context.Provider>
+    <Context.Provider value={[state, dispatch]}>
+      {children}
+    </Context.Provider>
   );
 };
 

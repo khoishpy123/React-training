@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 
-import { Context } from '../../store/Context';
+import Context from '../../store/Context';
 
 // Import the components
 import IconButton from '../Button/IconButton/IconButton';

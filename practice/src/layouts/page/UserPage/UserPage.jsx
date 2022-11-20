@@ -18,7 +18,7 @@ import {
 } from '../../../helpers/user.services';
 
 //stores
-import { Context } from '../../../store/Context';
+import Context from '../../../store/Context';
 
 // Import the Modal type
 import MODAL_TYPE from '../../../constants/modalType';
@@ -48,16 +48,30 @@ function UserPage() {
 
   const inputRef = useRef();
 
-  const getUserList = async () => {
-    try {
+  console.log(state);
+
+  const { allUsers } = state || {};
+
+  useEffect(() => {
+    async function getUserList() {
       const data = await getAllUserAPI();
-      if (data) {
-        dispatch(setAllUsers(data));
-      }
-    } catch (e) {
-      setError(e.message);
+      dispatch(setAllUsers(data));
     }
-  };
+    if (!allUsers?.length) {
+      getUserList();
+    }
+  }, [allUsers]);
+
+  // const getUserList = async () => {
+  //   try {
+  //     const data = await getAllUserAPI();
+  //     if (data) {
+  //       dispatch(setAllUsers(data));
+  //     }
+  //   } catch (e) {
+  //     setError(e.message);
+  //   }
+  // };
 
   const getUser = async (id) => {
     const data = await getUserApi(id);
@@ -70,14 +84,14 @@ function UserPage() {
     setShowModal(true);
   };
 
-  // Handle when the user clicks on the DELETE button.
+  // Handle when the user clicks on the delete button.
   const handleClickDelete = (id) => {
     setType(MODAL_TYPE.DELETE);
     setIdDelete(id);
     setShowModal(true);
   };
 
-  // handel when the user clicks delete
+  // handel when the user clicks edit button
   const handleClickEdit = (id) => {
     getUser(id);
     setType(MODAL_TYPE.EDIT);
@@ -142,10 +156,6 @@ function UserPage() {
     setMaxPageNumberLimit(maxPageNumberLimit - 5);
   };
 
-  useEffect(() => {
-    getUserList();
-  }, []);
-
   return (
     <div>
       <div className={styles.user_container}>
@@ -185,7 +195,9 @@ function UserPage() {
               ? handleEditUser
               : handleDeleteUser
           }
-          defaultValue={type === MODAL_TYPE.ADD ? state.allUsers : userData}
+          defaultValue={
+            type === MODAL_TYPE.ADD ? state.allUsers : userData
+          }
           type={type}
           showModal={showModal}
           closeModal={handelCloseModal}
