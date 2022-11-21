@@ -5,9 +5,7 @@
       "name": "Toby",
       "company": "Yozio",
       "role": "Architect",
-      "status": [
-        "Banned"
-      ],
+      "status": ["Banned"],
       "verified": false,
       "id": 9
     },
@@ -16,7 +14,7 @@
       "name": "Laraine Simmil",
       "company": "Yodel",
       "role": "Subcontractor",
-      "status": "Active",
+      "status": ["Active"],
       "verified": true,
       "id": 10
     },
@@ -25,7 +23,7 @@
       "name": "Ranna Shane",
       "company": "Abata",
       "role": "Surveyor",
-      "status": "Banned",
+      "status": ["Banned"],
       "verified": true,
       "id": 11
     },
@@ -34,7 +32,7 @@
       "name": "Matthiew Lemm",
       "company": "Devpoint",
       "role": "Electrician",
-      "status": "Banned",
+      "status": ["Banned"],
       "verified": false,
       "id": 12
     },
@@ -43,7 +41,7 @@
       "name": "Clare Swatheridge",
       "company": "Skynoodle",
       "role": "Surveyor",
-      "status": "Active",
+      "status": ["Active"],
       "verified": true,
       "id": 13
     },
@@ -52,7 +50,7 @@
       "name": "Anallise Dellenty",
       "company": "Reallinks",
       "role": "Estimator",
-      "status": "Active",
+      "status": ["Active"],
       "verified": false,
       "id": 14
     },
@@ -61,7 +59,7 @@
       "name": "Biron Backshall",
       "company": "Plajo",
       "role": "Construction Manager",
-      "status": "Banned",
+      "status": ["Banned"],
       "verified": false,
       "id": 15
     },
@@ -70,7 +68,7 @@
       "name": "Sibylle Wilfinger",
       "company": "Minyx",
       "role": "Construction Manager",
-      "status": "Active",
+      "status": ["Active"],
       "verified": false,
       "id": 16
     },
@@ -79,7 +77,7 @@
       "name": "Flin Fawdry",
       "company": "Lajo",
       "role": "Construction Worker",
-      "status": "Active",
+      "status": ["Active"],
       "verified": false,
       "id": 17
     },
@@ -88,7 +86,7 @@
       "name": "Zebedee Schwandner",
       "company": "Twitterwire",
       "role": "Supervisor",
-      "status": "Active",
+      "status": ["Active"],
       "verified": true,
       "id": 18
     },
@@ -97,7 +95,7 @@
       "name": "Ricca Irons",
       "company": "Yoveo",
       "role": "Project Manager",
-      "status": "Banned",
+      "status": ["Banned"],
       "verified": true,
       "id": 19
     },
@@ -106,7 +104,7 @@
       "name": "Moss Ianinotti",
       "company": "Edgetag",
       "role": "Engineer",
-      "status": "Active",
+      "status": ["Active"],
       "verified": false,
       "id": 20
     },
@@ -115,7 +113,7 @@
       "name": "Carolee Curds",
       "company": "Shufflebeat",
       "role": "Supervisor",
-      "status": "Banned",
+      "status": ["Banned"],
       "verified": true,
       "id": 21
     },
@@ -124,7 +122,7 @@
       "name": "Selina Lambot",
       "company": "Topdrive",
       "role": "Subcontractor",
-      "status": "Banned",
+      "status": ["Banned"],
       "verified": true,
       "id": 22
     },
@@ -133,7 +131,7 @@
       "name": "Denver Athowe",
       "company": "Katz",
       "role": "Construction Expeditor",
-      "status": "Active",
+      "status": ["Active"],
       "verified": true,
       "id": 23
     },
@@ -142,7 +140,7 @@
       "name": "Prent Donald",
       "company": "Gigazoom",
       "role": "Supervisor",
-      "status": "Active",
+      "status": ["Active"],
       "verified": true,
       "id": 24
     },
@@ -152,7 +150,7 @@
       "name": "Jimmie Whapple",
       "company": "Voomm",
       "role": "Construction Expeditor",
-      "status": "Banned",
+      "status": ["Banned"],
       "verified": false
     },
     {
@@ -161,7 +159,7 @@
       "name": "Koralle Argue",
       "company": "Yodoo",
       "role": "Architect",
-      "status": "Banned",
+      "status": ["Banned"],
       "verified": false
     },
     {
@@ -170,7 +168,7 @@
       "name": "Violante Mulvaney",
       "company": "Yadel",
       "role": "Subcontractor",
-      "status": "Active",
+      "status": ["Active"],
       "verified": false
     },
     {
@@ -178,9 +176,7 @@
       "name": "khoi",
       "company": "Agility",
       "role": "Dev",
-      "status": [
-        "Banned"
-      ],
+      "status": ["Banned"],
       "verified": true,
       "id": 28
     }
