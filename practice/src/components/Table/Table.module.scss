@@ -27,6 +27,11 @@ table {
       display: table-row;
       vertical-align: middle;
       outline: 0px;
+
+      &:hover {
+        background-color: rgba(145, 158, 171, 0.08);
+      }
+
       td {
         line-height: 2rem;
         font-weight: 400;
