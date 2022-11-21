@@ -2,7 +2,7 @@ import Header from './Header/header';
 import Sidebar from './Sidebar/sidebar';
 import './MainLayout.scss';
 
-function DefaultLayout({ children }) {
+const DefaultLayout = ({ children }) => {
   return (
     <div className="wrapper">
       <Header />
@@ -12,6 +12,6 @@ function DefaultLayout({ children }) {
       </div>
     </div>
   );
-}
+};
 
 export default DefaultLayout;

@@ -3,7 +3,7 @@ import { Icon } from '@iconify/react';
 
 import styles from './DropDownItem.module.scss';
 
-function DropDownItem({ dropdownId, onClickE, onClickEdit }) {
+const DropDownItem = ({ dropdownId, onClickE, onClickEdit }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClickDelete = () => {
@@ -55,6 +55,6 @@ function DropDownItem({ dropdownId, onClickE, onClickEdit }) {
       </div>
     </>
   );
-}
+};
 
 export default DropDownItem;

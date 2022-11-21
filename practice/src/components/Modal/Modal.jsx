@@ -167,8 +167,8 @@ const Modal = (props) => {
         {type === MODAL_TYPE.DELETE ? (
           <div>
             <h2>Are you sure ?</h2>
-            <p>
-              Do you really want to delete this product ? This process
+            <p className={styles.warn_message}>
+              Do you really want to delete this user ? This process
               cannot be undone.
             </p>
           </div>
@@ -181,7 +181,7 @@ const Modal = (props) => {
           >
             <div className={styles.avatar_block}>
               <div className={styles.avatar_user}>
-                {/* <label htmlFor="avatar">chose avatar</label> */}
+                <label htmlFor="avatar">avatar</label>
                 {avatar && (
                   <img
                     src={avatar}

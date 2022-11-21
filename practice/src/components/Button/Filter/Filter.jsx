@@ -2,7 +2,7 @@ import { Icon } from '@iconify/react';
 
 import styles from './Filter.module.scss';
 
-function Filter() {
+const Filter = () => {
   return (
     <div className={styles.wrapper}>
       <button className={styles.filter_btn}>
@@ -10,6 +10,6 @@ function Filter() {
       </button>
     </div>
   );
-}
+};
 
 export default Filter;

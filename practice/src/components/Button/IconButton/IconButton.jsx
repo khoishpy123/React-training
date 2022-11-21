@@ -4,7 +4,7 @@ import { Icon } from '@iconify/react';
 
 import styles from './IconButton.scss';
 
-function IconButton({ onClick, icon, className, text, disabled }) {
+const IconButton = ({ onClick, icon, className, text, disabled }) => {
   return (
     <>
       <button
@@ -18,6 +18,6 @@ function IconButton({ onClick, icon, className, text, disabled }) {
       </button>
     </>
   );
-}
+};
 
 export default IconButton;

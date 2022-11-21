@@ -1,4 +1,6 @@
-function NotFound() {
+import React from 'react';
+
+const NotFound = () => {
   return (
     <>
       <h2>Sorry, page not found!</h2>
@@ -8,6 +10,6 @@ function NotFound() {
       </h4>
     </>
   );
-}
+};
 
 export default NotFound;

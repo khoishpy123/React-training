@@ -5,7 +5,7 @@ import Search from '../../.././components/Search/Search';
 import HeaderLogo from '../../../assets/image/logos/logo.svg';
 import config from '../../.././config/index';
 
-function Header() {
+const Header = () => {
   return (
     <header className={styles.header_content}>
       <div className={styles.header_logo}>
@@ -21,6 +21,6 @@ function Header() {
       <div className={styles.header_account}></div>
     </header>
   );
-}
+};
 
 export default Header;

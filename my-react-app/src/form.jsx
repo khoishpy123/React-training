@@ -1,7 +1,7 @@
 import * as React from "react";
 import TablePagination from "@mui/material/TablePagination";
 
-function Form() {
+const Form = () => {
   const [page, setPage] = React.useState(2);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
@@ -24,5 +24,5 @@ function Form() {
       onRowsPerPageChange={handleChangeRowsPerPage}
     />
   );
-}
+};
 export default Form;

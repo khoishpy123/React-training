@@ -4,7 +4,7 @@ import { Icon } from '@iconify/react';
 //import styles
 import styles from './Search.module.scss';
 
-function Search(props) {
+const Search = (props) => {
   const { onchange, searchName, onclick, inputRef } = props;
 
   return (
@@ -26,6 +26,6 @@ function Search(props) {
       )}
     </div>
   );
-}
+};
 
 export default Search;
