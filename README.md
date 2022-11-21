@@ -63,7 +63,7 @@
 
 - Choose a branch
 
-  > `git checkout developer`
+  > `git checkout feature/review-practice`
 
 - Choose a folder
 
