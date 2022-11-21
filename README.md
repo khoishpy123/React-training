@@ -44,10 +44,9 @@
 - Delete the user in the list
   - The user can delete the user when clicking the Delete button – Show the popup confirmation.
 - Search the user by name
-
   - The user can search for the user by inputting the name of the product into the SearchBar.
 
-  ## How to run the project
+## How to run the project
 
 **Step one:** Clone the code folder from GitHub to your device
 
