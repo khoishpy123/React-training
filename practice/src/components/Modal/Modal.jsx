@@ -27,7 +27,7 @@ const Modal = (props) => {
       setAvatar('');
       setName('');
       setRole('');
-      setStatus(['Select status', 'Active', 'Banned']);
+      setStatus(['Active', 'Banned']);
       setCompany('');
       setVerified(false);
     }
@@ -241,7 +241,11 @@ const Modal = (props) => {
                 className={styles.form_select}
                 onChange={handleChangeStatus}
               >
-                <option value={status}>{status}</option>
+                {status.map((address, key) => (
+                  <option key={key} value={address}>
+                    {address}
+                  </option>
+                ))}
               </select>
             </div>
             <br />

@@ -34,7 +34,7 @@ import Pagination from '../../../components/Pagination/Pagination';
 // import styles
 import styles from './User.module.scss';
 
-function UserPage() {
+const UserPage = () => {
   const [state, dispatch] = useContext(Context);
   const [showModal, setShowModal] = useState(false);
   const [type, setType] = useState();
@@ -205,5 +205,5 @@ function UserPage() {
       </div>
     </div>
   );
-}
+};
 export default UserPage;

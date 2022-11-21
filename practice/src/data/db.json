@@ -5,7 +5,9 @@
       "name": "Toby Heb",
       "company": "Yozio",
       "role": "Architect",
-      "status": "Banned",
+      "status": [
+        "Banned"
+      ],
       "verified": true,
       "id": 9
     },

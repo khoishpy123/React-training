@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 
-function App() {
+const App = () => {
   const [avatar, setAvatar] = useState();
   const handlePreviewAvatar = (e) => {
     const file = e.target.files[0];
@@ -24,5 +24,5 @@ function App() {
       </div>
     </>
   );
-}
+};
 export default App;
