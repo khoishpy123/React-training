@@ -9,43 +9,37 @@ import IconBtn from '../Button/IconButton/IconButton';
 //styles
 import styles from './Modal.module.scss';
 
-function Modal(props) {
-  const { showModal, closeModal, onSubmit, type, defaultValue } = props;
-
-  const [avatar, setAvatar] = useState();
+const Modal = (props) => {
+  const { showModal, closeModal, onSubmit, type, defaultValue } =
+    props;
   const [name, setName] = useState('');
   const [role, setRole] = useState('');
-  const [status, setStatus] = useState('');
-  const [verified, setVerified] = useState(Boolean);
   const [error, setError] = useState('');
+  const [avatar, setAvatar] = useState('');
+  const [status, setStatus] = useState([]);
   const [company, setCompany] = useState('');
+  const [verified, setVerified] = useState(false);
 
   // The function to handle data in the input fields of the form
   useEffect(() => {
     // If the modal type is ADD, the input fields will be empty.
     if (type === MODAL_TYPE.ADD) {
+      setAvatar('');
       setName('');
-      setCompany('');
       setRole('');
+      setStatus(['Select status', 'Active', 'Banned']);
+      setCompany('');
       setVerified(false);
-      setStatus('');
     }
     //If the modal type is EDIT, the input field will be replaced by the fetched data.
-    else {
-      if (
-        defaultValue.name &&
-        defaultValue.company &&
-        defaultValue.role &&
-        defaultValue.status &&
-        defaultValue.avatar &&
-        defaultValue.verified
-      ) {
-        setAvatar(defaultValue.avatar);
+    else if (type === MODAL_TYPE.EDIT) {
+      {
         setName(defaultValue.name);
-        setCompany(defaultValue.company);
         setRole(defaultValue.role);
         setStatus(defaultValue.status);
-        setVerified(defaultValue.verified_btn);
+        setAvatar(defaultValue.avatar);
+        setCompany(defaultValue.company);
+        setVerified(defaultValue.verified);
       }
     }
     return () => {
@@ -53,16 +47,25 @@ function Modal(props) {
     };
   }, [showModal]);
 
-  useEffect(() => {
-    return () => {
-      avatar && URL.revokeObjectURL(avatar.preview);
-    };
-  }, [avatar]);
-
-  const handlePreviewAvatar = (e) => {
+  const handelChangeAvatar = async (e) => {
     const file = e.target.files[0];
-    file.preview = URL.createObjectURL(file);
-    setAvatar(file);
+    const base64 = await convertBase64(file);
+    setAvatar(base64);
+  };
+
+  const convertBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+
+      fileReader.onload = () => {
+        resolve(fileReader.result);
+      };
+
+      fileReader.onerror = (error) => {
+        reject(error);
+      };
+    });
   };
 
   // The function to handle changing the name
@@ -80,19 +83,17 @@ function Modal(props) {
     setRole(e.target.value);
   };
 
-  // const handleChangeAvatar = (e) => {
-  //   setAvatar(e.target.value);
-  // };
+  //the function to set value for verified when click checkbox
+  const carStatus = (e) => {
+    const { checked } = e.target;
+    setVerified(checked);
+  };
 
-  // const handleChangeStatus = (e) => {
-  //   setStatus(e.target.value);
-  // };
+  const handleChangeStatus = (e) => {
+    setStatus([e.target.value]);
+  };
 
-  // const handleChangeVerified = (e) => {
-  //   setVerified(e.target.value);
-  // };
-
-  // The function to handle ADD or EDIt the products
+  // The function to handle ADD or EDIt the user
   const handleAddOrEdit = () => {
     const data = {
       ...(type === MODAL_TYPE.EDIT && {
@@ -105,14 +106,18 @@ function Modal(props) {
       status,
       verified,
     };
-    const isValid = name && company && role && avatar;
+    const isValid = name && company && role && avatar && status;
     if (!isValid) {
       setError('Please enter full information !!');
       return;
     }
     const success = onSubmit(data);
     if (!success) {
-      setError(`${type === MODAL_TYPE.EDIT ? 'Edit' : 'Add'} the User failed!`);
+      setError(
+        `${
+          type === MODAL_TYPE.EDIT ? 'Edit' : 'Add'
+        } the User failed!`,
+      );
     } else {
       closeModal();
     }
@@ -128,6 +133,7 @@ function Modal(props) {
     }
   };
 
+  // the function to handle submit the user
   const handleClickSubmitForm = () => {
     switch (type) {
       case MODAL_TYPE.ADD:
@@ -162,8 +168,8 @@ function Modal(props) {
           <div>
             <h2>Are you sure ?</h2>
             <p>
-              Do you really want to delete this product ? This process cannot be
-              undone.
+              Do you really want to delete this product ? This process
+              cannot be undone.
             </p>
           </div>
         ) : (
@@ -178,7 +184,7 @@ function Modal(props) {
                 {/* <label htmlFor="avatar">chose avatar</label> */}
                 {avatar && (
                   <img
-                    src={avatar.preview}
+                    src={avatar}
                     alt="image"
                     className={styles.avatar_img}
                   />
@@ -187,7 +193,9 @@ function Modal(props) {
               <div className={styles.mr_l_10}>
                 <input
                   type="file"
-                  onChange={handlePreviewAvatar}
+                  onChange={(e) => {
+                    handelChangeAvatar(e);
+                  }}
                   className={styles.avatar_input}
                 />
               </div>
@@ -204,7 +212,7 @@ function Modal(props) {
               />
             </div>
             <div>
-              <label htmlFor="name" className={styles.name_label}>
+              <label htmlFor="company" className={styles.name_label}>
                 Company
               </label>
               <input
@@ -215,7 +223,7 @@ function Modal(props) {
               />
             </div>
             <div>
-              <label htmlFor="name" className={styles.name_label}>
+              <label htmlFor="role" className={styles.name_label}>
                 Role
               </label>
               <input
@@ -229,15 +237,16 @@ function Modal(props) {
               <label htmlFor="status" className={styles.name_label}>
                 Status
               </label>
-              <select className={styles.form_select}>
-                <option value="">Select status </option>
-                <option value="Active">Active</option>
-                <option value="Banned">Banned</option>
+              <select
+                className={styles.form_select}
+                onChange={handleChangeStatus}
+              >
+                <option value={status}>{status}</option>
               </select>
             </div>
             <br />
             <div className={styles.verified_btn}>
-              <input type="checkbox" />
+              <input onChange={carStatus} type="checkbox" />
               <label htmlFor="verified">Verified</label>
             </div>
           </form>
@@ -250,6 +259,6 @@ function Modal(props) {
       </div>
     </>
   ) : null;
-}
+};
 
 export default Modal;

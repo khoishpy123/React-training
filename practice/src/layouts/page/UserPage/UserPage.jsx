@@ -48,34 +48,25 @@ function UserPage() {
 
   const inputRef = useRef();
 
-  console.log(state);
-
-  const { allUsers } = state || {};
-
   useEffect(() => {
-    async function getUserList() {
-      const data = await getAllUserAPI();
-      dispatch(setAllUsers(data));
-    }
-    if (!allUsers?.length) {
-      getUserList();
-    }
-  }, [allUsers]);
+    getUserList();
+  }, []);
 
-  // const getUserList = async () => {
-  //   try {
-  //     const data = await getAllUserAPI();
-  //     if (data) {
-  //       dispatch(setAllUsers(data));
-  //     }
-  //   } catch (e) {
-  //     setError(e.message);
-  //   }
-  // };
+  const getUserList = async () => {
+    try {
+      const data = await getAllUserAPI();
+      if (data) {
+        dispatch(setAllUsers(data));
+      }
+    } catch (e) {
+      setError(e.message);
+    }
+  };
 
   const getUser = async (id) => {
     const data = await getUserApi(id);
     setUserData(data);
+    setShowModal(true);
   };
 
   // Handle when the user clicks on the ADD button.
@@ -84,18 +75,17 @@ function UserPage() {
     setShowModal(true);
   };
 
-  // Handle when the user clicks on the delete button.
-  const handleClickDelete = (id) => {
-    setType(MODAL_TYPE.DELETE);
-    setIdDelete(id);
-    setShowModal(true);
-  };
-
   // handel when the user clicks edit button
   const handleClickEdit = (id) => {
     getUser(id);
     setType(MODAL_TYPE.EDIT);
+  };
+
+  // Handle when the user clicks on the delete button.
+  const handleClickDelete = (id) => {
+    setIdDelete(id);
     setShowModal(true);
+    setType(MODAL_TYPE.DELETE);
   };
 
   // the function call API to add new users
@@ -122,6 +112,7 @@ function UserPage() {
     if (data) {
       setUserData(data);
       dispatch(editUser(user));
+      getUserList();
     }
   };
 
@@ -180,7 +171,6 @@ function UserPage() {
         <Table
           onClickDelete={handleClickDelete}
           onClickEdit={handleClickEdit}
-          dataValue={userData}
           showModal={showModal}
           searchName={searchName}
           allUsers={state.allUsers}

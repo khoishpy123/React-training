@@ -1,7 +1,7 @@
 import {
-  ADD_ITEM,
-  EDIT_ITEM,
-  DELETE_ITEM,
+  ADD_USER,
+  EDIT_USER,
+  DELETE_USER,
   SET_ALL_USERS,
 } from '../constants/constants';
 
@@ -16,12 +16,12 @@ export default function reducer(state, action) {
         ...state,
         allUsers: action.allUsers,
       };
-    case ADD_ITEM:
+    case ADD_USER:
       return {
         ...state,
         allUsers: [...state.allUsers, action.newUser],
       };
-    case EDIT_ITEM:
+    case EDIT_USER:
       return {
         ...state,
         allUsers: state.allUsers?.map((item) => {
@@ -29,7 +29,7 @@ export default function reducer(state, action) {
           return item;
         }),
       };
-    case DELETE_ITEM:
+    case DELETE_USER:
       const deleteUser = state.allUsers.filter((item) => {
         if (item.id === action.id) return false;
         return true;

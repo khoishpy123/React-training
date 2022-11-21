@@ -29,13 +29,19 @@ function DropDownItem({ dropdownId, onClickE, onClickEdit }) {
         </button>
         {isOpen && (
           <div className={styles.wrapper}>
-            <li className={styles.dropDown_Item} onClick={handleClickEdit}>
+            <li
+              className={styles.dropDown_Item}
+              onClick={handleClickEdit}
+            >
               <span>
                 <Icon icon="clarity:edit-solid" />
               </span>
               <span>Edit</span>
             </li>
-            <li className={styles.dropDown_Item} onClick={handleClickDelete}>
+            <li
+              className={styles.dropDown_Item}
+              onClick={handleClickDelete}
+            >
               <span>
                 <Icon
                   icon="fluent:delete-12-regular"

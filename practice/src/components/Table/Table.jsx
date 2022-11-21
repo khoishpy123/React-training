@@ -16,7 +16,10 @@ export const Table = (props) => {
   // Get current posts
   const indexOfLastTable = currentPage * itemsPerPage;
   const indexOfFirstTable = indexOfLastTable - itemsPerPage;
-  const currentTable = allUsers.slice(indexOfFirstTable, indexOfLastTable);
+  const currentTable = allUsers.slice(
+    indexOfFirstTable,
+    indexOfLastTable,
+  );
 
   return (
     <>
@@ -40,7 +43,9 @@ export const Table = (props) => {
               if (searchName == '') {
                 return item;
               } else if (
-                item.name.toLowerCase().includes(searchName.toLowerCase())
+                item.name
+                  .toLowerCase()
+                  .includes(searchName.toLowerCase())
               ) {
                 return item;
               }
@@ -62,7 +67,7 @@ export const Table = (props) => {
                 </td>
                 <td>{item.company}</td>
                 <td>{item.role}</td>
-                <td>{item.verified}</td>
+                <td>{String(item.verified)}</td>
                 <td>{item.status}</td>
                 <td>
                   <DropDownItem

@@ -1,8 +1,8 @@
 // constants
 import {
-  ADD_ITEM,
-  DELETE_ITEM,
-  EDIT_ITEM,
+  ADD_USER,
+  DELETE_USER,
+  EDIT_USER,
   SET_ALL_USERS,
 } from '../constants/constants';
 
@@ -12,16 +12,16 @@ export const setAllUsers = (allUsers) => ({
 });
 
 export const addUser = (newUser) => ({
-  type: ADD_ITEM,
+  type: ADD_USER,
   newUser,
 });
 
 export const editUser = (newUser) => ({
-  type: EDIT_ITEM,
+  type: EDIT_USER,
   newUser,
 });
 
 export const deleteUser = (id) => ({
-  type: DELETE_ITEM,
+  type: DELETE_USER,
   id,
 });
