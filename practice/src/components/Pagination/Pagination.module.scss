@@ -1,0 +1,63 @@
+.wrapper {
+  border: 1px solid rgb(249, 250, 251);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spacer {
+  flex: 1 1 100%;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+.pagination li {
+  width: 40px;
+  text-align: center;
+  background-color: #ccc;
+  cursor: pointer;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin: 0 10px;
+
+  &:hover {
+    box-shadow: none;
+    background-color: rgb(57 164 48);
+  }
+  &:active {
+    background-color: white;
+    color: black;
+  }
+}
+
+.disPlayedRows {
+  display: flex;
+  width: 215px;
+  justify-content: center;
+}
+
+.changePage_btn {
+  display: flex;
+}
+
+.changePage_btn button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+
+  &:hover {
+    background-color: rgba(99, 115, 129, 0.08);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

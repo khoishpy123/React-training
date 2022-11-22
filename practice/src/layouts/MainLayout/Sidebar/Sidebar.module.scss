@@ -1,0 +1,37 @@
+.wrapper {
+  width: 280px;
+  border-right: 1px dashed rgba(145, 158, 171, 0.24);
+}
+
+.box_content {
+  margin: auto 20px;
+  margin-bottom: 40px;
+}
+
+.box_avatar {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 16px 20px;
+  border-radius: 9px;
+  background-color: rgba(145, 158, 171, 0.12);
+}
+
+.nav_sidebar {
+  padding: 8px;
+}
+
+.avatar_image {
+  width: 40px;
+  height: 40px;
+  background-image: url(/src/assets/avatars/avatar_15.jpg);
+  background-size: 100%;
+  border-radius: 30px;
+}
+
+.avatar_name {
+  font-size: 15px;
+  color: rgb(99, 115, 129);
+  margin-left: 15px;
+  font-weight: bold;
+}
